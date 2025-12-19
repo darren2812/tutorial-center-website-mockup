@@ -1,0 +1,271 @@
+html {
+    font-family: "Roboto", Verdana, sans-serif;
+}
+
+#main-logo {
+    max-height: 70px;
+    max-width: 70px;
+}
+
+header {
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 25px 40px;
+    margin: 0px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.upper-icons {
+    display: flex;
+    gap: 4rem;
+    margin-left: auto;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.upper-icons a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.upper-icons a:hover {
+    color: maroon;
+    font-weight: 500;
+}
+
+body {
+    background-color: #f8f8f8;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    height: 80vh; 
+    position: relative;
+}
+
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 5vw;
+    max-width: 50vw;
+    
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+.hero-text h1:first-child {
+    font-size: 7rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0px;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.hero-buttons {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.btn {
+    font-weight: 300;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 0.6em 1.5em;
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 9999px;
+    background-color: maroon;
+}
+
+.btn:hover {
+    background-color: darkred;
+    font-weight: 500;
+}
+
+.hero-bottom-text {
+    text-align: left;
+    padding-left: 5vw;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.hero-bottom-text h3 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.hero-bottom-text a {
+    color: maroon;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.hero-bottom-text a:hover {
+    color: darkred;
+}
+
+.hero-circle {
+  position: absolute;
+  object-fit: cover;
+  bottom: -105%;
+  right: -10%;
+  transform: translateY(-50%);
+  width: clamp(500px, 60vw, 1000px);  /* scales with viewport but stays within min/max */
+  height: clamp(500px, 60vw, 1000px);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.hours-of-operation {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5vw;
+    margin-top: 15vh;
+    max-width: 60vw;
+}
+
+.hours-of-operation h1:first-child {
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+.days-and-hours {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+.days-and-hours h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    margin: 1.25rem 0;
+}
+
+.days-of-the-week {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10vw;
+}
+
+.hours {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.work-cta {
+    margin: 15vh 0 0 0;
+    padding: 4rem 0;
+    display: block;
+    border-left: 2vw solid maroon;
+    background-color: #f0f0f0;
+}
+
+.work-cta-text {
+    padding-left: 5vw;
+    max-width: 80vw;
+}
+
+.work-cta-text h1:first-child {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.work-cta-text a {
+    margin-top: 2rem;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: maroon;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 3rem 0;
+}
+
+.quick-links h3:first-child {
+    margin: 0;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.first-column-links {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.second-column-links {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.site-footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 4rem 10vw;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-links,
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-meta p {
+    margin: 0.25rem 0;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+
