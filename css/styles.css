@@ -1,32 +1,185 @@
-html {
-    font-family: "Roboto", Verdana, sans-serif;
+/* Importing font */
+@import url('general-sans.css');
+
+:root {
+  /* --- 1. CORE SETTINGS --- */
+  --font-family: 'GeneralSans-Variable', 'Roboto', sans-serif;
+  --base-size: 1rem; /* 16px default */
+
+  /* --- 2. TYPOGRAPHY SCALE (Major Thirds - 1.25) --- */
+  /* Anchor: 4rem (64px) */
+  
+  /* DISPLAY (Hero Text) */
+  --display-lg-size: 4rem;
+  --display-lg-weight: 600;
+  --display-lg-line-height: 1.1;   /* Very tight for large text */
+  --display-lg-letter-spacing: -0.02em;
+
+  /* 4 / 1.25 = 3.2rem */
+  --display-md-size: 3.2rem;
+  --display-md-weight: 600;
+  --display-md-line-height: 1.15;
+  --display-md-letter-spacing: -0.015em;
+
+  /* HEADINGS */
+  /* 3.2 / 1.25 = 2.56rem */
+  --h1-size: 2.56rem;
+  --h1-weight: 500;
+  --h1-line-height: 1.2;
+  --h1-letter-spacing: -0.01em;
+
+  /* 2.56 / 1.25 = 2.05rem */
+  --h2-size: 2.05rem;
+  --h2-weight: 500;
+  --h2-line-height: 1.25;
+  --h2-letter-spacing: -0.005em;
+
+  /* 2.05 / 1.25 = 1.64rem */
+  --h3-size: 1.64rem;
+  --h3-weight: 500;
+  --h3-line-height: 1.3;
+  --h3-letter-spacing: 0em;
+
+  /* 1.64 / 1.25 = 1.31rem */
+  --h4-size: 1.31rem;
+  --h4-weight: 500;
+  --h4-line-height: 1.35;
+  --h4-letter-spacing: 0.005em;
+
+  /* 1.31 / 1.25 = 1.05rem */
+  --h5-size: 1.05rem;      /* Great for "Intro" paragraphs */
+  --h5-weight: 500;
+  --h5-line-height: 1.45;
+  --h5-letter-spacing: 0.01em;
+
+  /* 1.05 / 1.25 = 0.84rem */
+  --h6-size: 0.85rem;      /* Great for Uppercase Labels/Overlines */
+  --h6-weight: 500;
+  --h6-line-height: 1.5;
+  --h6-letter-spacing: 0.05em; /* Wide spacing for small/caps text */
+  --h6-text-transform: uppercase;
+
+  /* --- 3. BODY COPY --- */
+  
+  /* Standard Body (16px) */
+  --body-size: 1rem;
+  --body-weight: 400;
+  --body-line-height: 1.6;  /* Good readability */
+  --body-letter-spacing: 0.01em;
+
+  /* Small Body (For footers/metadata) */
+  --body-sm-size: 0.875rem; /* 14px */
+  --body-sm-weight: 400;
+  --body-sm-line-height: 1.6;
+  --body-sm-letter-spacing: 0.015em;
+
+  /* Button Text (UI Elements) */
+  --btn-size: 1.2rem;
+  --btn-weight: 400;        /* Bold for clickability */
+  --btn-line-height: 1;     /* Buttons usually use padding for height, not line-height */
+  --btn-letter-spacing: 0.02em;
+
+  /* --- 4. SPACING SYSTEM (8pt Grid) --- */
+  
+  /* 4px - Micro adjustments */
+  --space-xxs: 0.25rem; 
+  /* 8px - Related elements (Heading + Subhead) */
+  --space-xs: 0.5rem;   
+  /* 16px - Default gap (Paragraphs, List items) */
+  --space-sm: 1rem;     
+  /* 24px - Medium separation (Between Card content) */
+  --space-md: 1.5rem;   
+  /* 32px - Layout separation (Between columns or small sections) */
+  --space-lg: 2rem;     
+  /* 64px - Section breaks (Between "Hero" and "Next Section") */
+  --space-xl: 4rem;     
+  /* 128px - Major Page breaks (If you have a very long landing page) */
+  --space-xxl: 8rem;  
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
+  background: linear-gradient(
+    180deg,
+    #F8F8F8 0%,
+    #F2F2F2 100%,
+  );
+  color: #121212;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 { font-size: var(--h1-size); font-weight: var(--h1-weight); line-height: var(--h1-line-height); letter-spacing: var(--h1-letter-spacing); }
+h2 { font-size: var(--h2-size); font-weight: var(--h2-weight); line-height: var(--h2-line-height); letter-spacing: var(--h2-letter-spacing); }
+h3 { font-size: var(--h3-size); font-weight: var(--h3-weight); line-height: var(--h3-line-height); letter-spacing: var(--h3-letter-spacing); }
+h4 { font-size: var(--h4-size); font-weight: var(--h4-weight); line-height: var(--h4-line-height); letter-spacing: var(--h4-letter-spacing); }
+h5 { font-size: var(--h5-size); font-weight: var(--h5-weight); line-height: var(--h5-line-height); letter-spacing: var(--h5-letter-spacing); }
+h6 { font-size: var(--h6-size); font-weight: var(--h6-weight); line-height: var(--h6-line-height); letter-spacing: var(--h6-letter-spacing); }
+
+.display-lg {
+  font-size: var(--display-lg-size);
+  font-weight: var(--display-lg-weight);
+  line-height: var(--display-lg-line-height);
+  letter-spacing: var(--display-lg-letter-spacing);
+}
+
+.display-md {
+  font-size: var(--display-md-size);
+  font-weight: var(--display-md-weight);
+  line-height: var(--display-md-line-height);
+  letter-spacing: var(--display-md-letter-spacing);
 }
 
 #main-logo {
     max-height: 70px;
     max-width: 70px;
+    margin: 0;
+}
+
+/* The Shell for your content */
+.container {
+  width: 100%;
+  
+  /* 1. Center the container on large screens */
+  max-width: 1440px; /* or 1440px if you want it wider */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* 2. Create the safety gutters (The "Margins" you asked for) */
+  padding-left: var(--space-lg);  /* 32px starts looking good on laptop */
+  padding-right: var(--space-lg);
+
+  border: 1px solid black;
 }
 
 header {
-    background-color: #f8f8f8;
+    background-color: white;
+    height: var(--space-xl);
+    padding: var(--space-md) 0;
     display: flex;
-    align-items: center;
-    height: 64px;
-    padding: 25px 40px;
-    margin: 0px;
+    align-items: center; /* making sure that the top and bottom paddings are identical */    
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+    font-size: var(--btn-size);
+}
+
 .upper-icons {
     display: flex;
-    gap: 4rem;
-    margin-left: auto;
+    gap: var(--space-xl);
+    margin-right: auto;
+    margin-left: var(--space-xl);
     color: black;
-    font-size: 1.5rem;
-    font-weight: 300;
 }
 
 .upper-icons a {
@@ -39,16 +192,56 @@ header {
     font-weight: 500;
 }
 
-body {
-    background-color: #f8f8f8;
-    margin: 0;
-    overflow-x: hidden;
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  border-radius: 9999px;
+  font-size: var(--btn-size);
+  font-weight: var(--btn-weight);
+  line-height: var(--btn-line-height);
+  letter-spacing: var(--btn-letter-spacing);
+}
+
+.primary-btn {
+  background-color: maroon;
+  color: white;
+  border: none;
+}
+
+.secondary-btn {
+  color: maroon;
+  background-color: transparent;
+  border: 1px solid #E2E2E2;
+}
+
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+a {
+    transition: all 0.1s ease-in-out;
+}
+
+.primary-btn:hover {
+    background-color: #5A0000;
+}
+
+.secondary-btn:hover {
+    background-color: #E2E2E2;
+    border: 1px solid maroon;
+}
+
+.upper-buttons {
+  display: flex;
+  gap: var(--space-lg);
+  margin-left: auto;
 }
 
 .hero {
     display: flex;
     flex-direction: column;
-    height: 80vh; 
+    height: 70vh; 
     position: relative;
 }
 
@@ -56,77 +249,63 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     margin-top: auto;
     margin-bottom: auto;
-    padding-left: 5vw;
-    max-width: 50vw;
+    padding: var(--space-xl) 0;
+    width: 50%;
     
 }
 
 .hero-text {
     display: flex;
     flex-direction: column;
-    margin: 0px;
 }
 
-.hero-text h1:first-child {
-    font-size: 5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    margin-top: 0px;
-}
-
-h2 {
+.hero-title {
+    font-size: var(--display-lg-size);
+    font-weight: var(--display-lg-weight);
+    line-height: var(--display-lg-line-height);
+    letter-spacing: var(--display-lg-letter-spacing);
+    margin-bottom: var(--space-md);
     margin-top: 0;
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1.4;
+}
+
+.hero-subtitle {
+    /* "Fresno City College..." */
+    font-size: var(--h3-size);       
+    font-weight: 400;               
+    line-height: 1.6;   
+    margin-top: 0;         
+    margin-bottom: var(--space-lg);
+    max-width: 65ch;
 }
 
 .hero-buttons {
-    margin-top: 3rem;
     display: flex;
     flex-direction: row;
-    gap: 4rem;
-}
-
-.btn {
-    font-weight: 300;
-    font-size: 1.5rem;
-    display: inline-block;
-    padding: 0.6em 1.5em;
-    color: whitesmoke;
-    text-decoration: none;
-    border-radius: 9999px;
-    background-color: maroon;
-}
-
-.btn:hover {
-    background-color: darkred;
-    font-weight: 500;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
 .hero-bottom-text {
+    margin-top: 0;
     text-align: left;
-    padding-left: 5vw;
-    margin-bottom: 2rem;
-    font-weight: 300;
-    font-size: 1.2rem;
 }
 
-.hero-bottom-text h3 {
-    font-weight: 300;
-    margin-bottom: 1rem;
+.hero-bottom-text h4 {
+    margin-bottom: var(--space-sm);
 }
 
 .hero-bottom-text a {
     color: maroon;
     text-decoration: underline;
-    font-weight: 500;
+    font-size: var(--btn-size);
+    margin-bottom: 0;
 }
 
 .hero-bottom-text a:hover {
-    color: darkred;
+    font-weight: 500;
 }
 
 .hero-circle {
@@ -136,7 +315,7 @@ h2 {
     right: 0;
     width: clamp(500px, 60vw, 1000px);
     height: clamp(500px, 60vw, 1000px);
-    transform: translate(30%, 25%);
+    transform: translate(40%, 25%);
     border-radius: 50%;
     background-color: maroon;
     z-index: 0;
@@ -150,11 +329,6 @@ h2 {
     max-width: 60vw;
 }
 
-.hours-of-operation h1:first-child {
-    font-weight: 700;
-    font-size: 4rem;
-}
-
 .days-and-hours {
     display: flex;
     flex-direction: row;
@@ -162,8 +336,6 @@ h2 {
 }
 
 .days-and-hours h2 {
-    font-weight: 300;
-    font-size: 2rem;
     margin: 1.25rem 0;
 }
 
@@ -194,8 +366,6 @@ h2 {
 
 .work-cta-text h1:first-child {
     margin-top: 0;
-    font-weight: 700;
-    font-size: 3rem;
 }
 
 .work-cta-text a {
@@ -203,7 +373,7 @@ h2 {
 }
 
 .site-footer {
-    color: whitesmoke;
+    color: white;
     padding: 4rem 10vw;
     background-color: maroon;
 }
@@ -253,22 +423,16 @@ h2 {
 
 .subjects-hero-content h1:first-child {
     margin: 0 0 0 0;
-    font-size: 4rem;
-    font-weight: 600;
     text-align: center;
 }
 
 .subjects-hero-emphasis  {
     margin: 0;
-    font-size: 5rem;
-    font-weight: 900;
     text-align: center;
     color: maroon;
 }
 
 .subjects-hero h3 {
-    font-size: 1.5rem;
-    font-weight: 300;
     margin: 2.5rem 0;
     text-align: center;
     max-width: 40%;
@@ -277,8 +441,6 @@ h2 {
 .subjects-hero-content input {
     display: flex;
     height: 3.5rem;
-    font-weight: 100;
-    font-size: 1.5rem;
     padding: 0.6em 1.5em;
     text-decoration: none;
     border-radius: 9999px;
@@ -324,11 +486,6 @@ h2 {
     margin-bottom: 3rem;
 }
 
-.subjects-menu h2 {
-    font-weight: 500;
-    font-size: 2rem;
-}
-
 .subjects-box {
     width: 80%;
     border: 1px solid #ccc;
@@ -348,8 +505,6 @@ h2 {
 .subjects-content a {
     color: maroon;
     text-decoration: underline;
-    font-weight: 300;
-    font-size: 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -357,5 +512,6 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+
 
 
