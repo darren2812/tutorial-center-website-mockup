@@ -39,7 +39,7 @@
   /* 2.05 / 1.25 = 1.64rem */
   --h3-size: clamp(1.2288rem, 1.121rem + 0.5749vw, 1.6384rem);
   --h3-weight: 400;
-  --h3-line-height: 1.3;
+  --h3-line-height: 1.6; /* Modified because h3 acts as body text */
   --h3-letter-spacing: 0em;
 
   /* 1.64 / 1.25 = 1.31rem */
@@ -110,6 +110,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+}
+
 body {
   font-family: var(--font-family);
   font-size: var(--body-size);
@@ -121,7 +125,6 @@ body {
       #F2F2F2 100%,
     );
   color: #121212;
-  margin: 0;
   overflow-x: hidden;
 }
 
@@ -187,22 +190,11 @@ h6 {
   margin: 0;
 }
 
-/* The Shell for your content */
 .container {
   width: 100%;
-
-  /* 1. Center the container on large screens */
   max-width: 1440px;
-  /* or 1440px if you want it wider */
-  margin-left: auto;
-  margin-right: auto;
-
-  /* 2. Create the safety gutters (The "Margins" you asked for) */
-  padding-left: var(--space-md);
-  /* 32px starts looking good on laptop */
-  padding-right: var(--space-md);
-
-  border: 1px solid black;
+  margin: 0 auto;
+  padding: 0 var(--space-lg)
 }
 
 header {
@@ -213,6 +205,8 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: auto;
   padding: var(--space-sm) 0;
+  margin: 0;
+  width: 100%;
 }
 
 .navbar {
@@ -261,8 +255,6 @@ a {
   display: flex;
   flex-direction: column;
   position: relative;
-  border: 1px solid black;
-  margin-bottom: var(--space-xxl);
 }
 
 .hero-inner {
@@ -290,7 +282,6 @@ a {
 
 .hero-subtitle {
   font-size: var(--h3-size);
-  line-height: 1.6;
   margin-top: 0;
   margin-bottom: var(--space-lg);
   padding: 0 var(--space-sm);
@@ -329,47 +320,64 @@ a {
 }
 
 .hours-of-operation {
-  border: 1px solid pink;
-  width: 50%;
+  padding: var(--space-xl) 0;
+  width: 100%;
+  text-align: center;
 }
 
-.days-and-hours {
-  border: 1px solid blue;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-}
-
-.days-of-the-week,
-.hours {
-  display: flex;
-  flex-direction: column;
-}
-
-.work-cta {
-  margin: 15vh 0 0 0;
-  padding: 4rem 0;
-  display: block;
-  border-left: 2vw solid maroon;
-  background-color: #f0f0f0;
-}
-
-.work-cta-text {
-  padding-left: 5vw;
-  max-width: 80vw;
-}
-
-.work-cta-text h1:first-child {
+.hours-of-operation h1 {
   margin-top: 0;
 }
 
-.work-cta-text a {
-  margin-top: 2rem;
+.days-and-hours {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: var(--space-xs) 0;
+}
+
+.days-and-hours h3 {
+  margin: var(--space-xs) 0;
+}
+
+.days {
+  font-weight: var(--h1-weight);
+}
+
+.work-cta {
+  position: relative;
+  display: block;
+  background-color: #F2F2F2;
+  padding: var(--space-xl) 0;
+}
+
+.work-cta::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2vw;
+  height: 100%;
+  background: maroon;
+}
+
+.work-cta-text {
+  width: 100%;
+}
+
+.work-cta-text h1 {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+.work-cta-text h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-lg);
 }
 
 .site-footer {
   color: white;
-  padding: 4rem 10vw;
   background-color: maroon;
+  padding: var(--space-xl) 0;
 }
 
 .footer-content {
@@ -588,6 +596,15 @@ a {
     background-color: maroon;
     z-index: 0;
   } 
+
+  .hours-of-operation {
+    width: 50%;
+    text-align: left;
+  }
+
+  .days-and-hours {
+    grid-template-columns: 1fr 1fr;
+  }
 
   .footer-content {
     display: grid;
