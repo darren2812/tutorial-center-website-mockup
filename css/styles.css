@@ -11,52 +11,52 @@
   /* Anchor: 4rem (64px) */
 
   /* DISPLAY (Hero Text) */
-  --display-lg-size: clamp(3rem, 2.7143rem + 1.4286vw, 4rem);
+  --display-lg-size: clamp(2.4883rem, 1.9457rem + 2.4116vw, 3.8147rem);
   --display-lg-weight: 600;
   --display-lg-line-height: 1.1;
   /* Very tight for large text */
   --display-lg-letter-spacing: -0.02em;
 
   /* 4 / 1.25 = 3.2rem */
-  --display-md-size: clamp(2.4rem, 2.1714rem + 1.1429vw, 3.2rem);
+  --display-md-size: clamp(2.0736rem, 1.6734rem + 1.7785vw, 3.0518rem);
   --display-md-weight: 600;
   --display-md-line-height: 1.15;
   --display-md-letter-spacing: -0.015em;
 
   /* HEADINGS */
   /* 3.2 / 1.25 = 2.56rem */
-  --h1-size: clamp(1.92rem, 1.7371rem + 0.9143vw, 2.56rem);
+  --h1-size: clamp(1.728rem, 1.4362rem + 1.2971vw, 2.4414rem);
   --h1-weight: 500;
   --h1-line-height: 1.2;
   --h1-letter-spacing: -0.01em;
 
   /* 2.56 / 1.25 = 2.05rem */
-  --h2-size: clamp(1.536rem, 1.4013rem + 0.7186vw, 2.048rem);
+  --h2-size: clamp(1.44rem, 1.2301rem + 0.933vw, 1.9531rem);
   --h2-weight: 500;
   --h2-line-height: 1.25;
   --h2-letter-spacing: -0.005em;
 
   /* 2.05 / 1.25 = 1.64rem */
-  --h3-size: clamp(1.2288rem, 1.121rem + 0.5749vw, 1.6384rem);
+  --h3-size: clamp(1.2rem, 1.0517rem + 0.6591vw, 1.5625rem);
   --h3-weight: 400;
   --h3-line-height: 1.6; /* Modified because h3 acts as body text */
   --h3-letter-spacing: 0em;
 
   /* 1.64 / 1.25 = 1.31rem */
-  --h4-size: 1.31rem;
+  --h4-size: 1.25rem;
   --h4-weight: 500;
   --h4-line-height: 1.35;
   --h4-letter-spacing: 0.005em;
 
   /* 1.31 / 1.25 = 1.05rem */
-  --h5-size: 1.05rem;
+  --h5-size: 1rem;
   /* Great for "Intro" paragraphs */
   --h5-weight: 500;
   --h5-line-height: 1.45;
   --h5-letter-spacing: 0.01em;
 
   /* 1.05 / 1.25 = 0.84rem */
-  --h6-size: 0.85rem;
+  --h6-size: 0.8rem;
   /* Great for Uppercase Labels/Overlines */
   --h6-weight: 500;
   --h6-line-height: 1.5;
@@ -90,20 +90,13 @@
 
   /* --- 4. SPACING SYSTEM (8pt Grid) --- */
 
-  /* 4px - Micro adjustments */
-  --space-xxs: 0.25rem;
-  /* 8px - Related elements (Heading + Subhead) */
-  --space-xs: 0.5rem;
-  /* 16px - Default gap (Paragraphs, List items) */
-  --space-sm: 1rem;
-  /* 24px - Medium separation (Between Card content) */
-  --space-md: 1.5rem;
-  /* 32px - Layout separation (Between columns or small sections) */
-  --space-lg: 2rem;
-  /* 64px - Section breaks (Between "Hero" and "Next Section") */
-  --space-xl: 4rem;
-  /* 128px - Major Page breaks (If you have a very long landing page) */
-  --space-xxl: 8rem;
+  --space-xxs: clamp(0.5rem, 0.4583rem + 0.1852vw, 0.625rem);
+  --space-xs: clamp(0.75rem, 0.6875rem + 0.2778vw, 0.9375rem);
+  --space-sm: clamp(1rem, 0.9167rem + 0.3704vw, 1.25rem);
+  --space-md: clamp(1.5rem, 1.375rem + 0.5556vw, 1.875rem);
+  --space-lg: clamp(2rem, 1.8333rem + 0.7407vw, 2.5rem);
+  --space-xl: clamp(3rem, 2.75rem + 1.1111vw, 3.75rem);
+  --space-xxl: clamp(4rem, 3.6667rem + 1.4815vw, 5rem);
 }
 
 *, *::before, *::after {
@@ -185,8 +178,8 @@ h6 {
 }
 
 #main-logo {
-  max-height: var(--space-xl);
-  max-width: var(--space-xl);
+  max-height: 56px;
+  max-width: 56px; 
   margin: 0;
 }
 
@@ -229,6 +222,9 @@ header {
   font-weight: var(--btn-weight);
   line-height: var(--btn-line-height);
   letter-spacing: var(--btn-letter-spacing);
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  width: 100%;
 }
 
 .primary-btn {
@@ -241,10 +237,6 @@ header {
   color: maroon;
   background-color: transparent;
   border: 1px solid maroon;
-}
-
-.btn {
-  transition: all 0.2s ease-in-out;
 }
 
 a {
@@ -261,8 +253,8 @@ a {
   display: flex;
   flex-direction: column;
   padding: var(--space-xl) 0;
-  text-align: center;
-  align-items: center;
+  text-align: left;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -284,7 +276,6 @@ a {
   font-size: var(--h3-size);
   margin-top: 0;
   margin-bottom: var(--space-lg);
-  padding: 0 var(--space-sm);
   max-width: 65ch;
 }
 
@@ -293,6 +284,7 @@ a {
   flex-direction: column;
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
+  width: 100%;
 }
 
 .hero-bottom-text {
@@ -305,9 +297,11 @@ a {
 }
 
 .hero-bottom-text a {
-  background: transparent;
-  color: #555;
-  border: 1px solid #ddd;
+  color: maroon;
+  text-decoration: underline;
+  font-size: var(--btn-size);
+  border: none;
+  padding: 0;
   margin-bottom: 0;
 }
 
@@ -317,6 +311,10 @@ a {
 
 .hero-circle {
   display: none;
+}
+
+.hours-background {
+  background-color: #F2F2F2;
 }
 
 .hours-of-operation {
@@ -332,11 +330,11 @@ a {
 .days-and-hours {
   display: grid;
   grid-template-columns: 1fr;
-  padding: var(--space-xs) 0;
+  padding: var(--space-sm) 0;
 }
 
 .days-and-hours h3 {
-  margin: var(--space-xs) 0;
+  margin: 0;
 }
 
 .days {
@@ -346,7 +344,6 @@ a {
 .work-cta {
   position: relative;
   display: block;
-  background-color: #F2F2F2;
   padding: var(--space-xl) 0;
 }
 
@@ -355,7 +352,7 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  width: 2vw;
+  width: 1.5vw;
   height: 100%;
   background: maroon;
 }
@@ -510,19 +507,15 @@ a {
 }
 
 @media (min-width: 768px) {
-  .hero-buttons {
-    flex-direction: row;
-    gap: var(--space-xl);
-    margin-bottom: var(--space-xl);
+
+  .btn {
+    width: auto;
   }
 
-  .hero-bottom-text a {
-    color: maroon;
-    text-decoration: underline;
-    font-size: var(--btn-size);
-    border: none;
-    padding: 0;
-  } 
+  .hero-buttons {
+    flex-direction: row;
+    margin-bottom: var(--space-xl);
+  }
 
   header {
     padding: var(--space-sm) 0;
@@ -540,9 +533,9 @@ a {
 
   .upper-icons {
     display: flex;
-    gap: var(--space-lg);
+    gap: var(--space-xl);
     margin-right: auto;
-    margin-left: var(--space-lg);
+    margin-left: var(--space-xl);
     color: black;
   }
 
@@ -572,7 +565,6 @@ a {
 
   .hero-inner {
     display: flex;
-    text-align: left;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -609,12 +601,5 @@ a {
   .footer-content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-  }
-}
-
-@media (min-width: 1200px) {
-  .upper-icons {
-    gap: var(--space-xl);
-    margin-left: var(--space-xl);
   }
 }
