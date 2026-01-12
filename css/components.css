@@ -1,0 +1,230 @@
+/* --- Buttons & Links --- */
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  border-radius: 9999px;
+  font-size: var(--btn-size);
+  font-weight: var(--btn-weight);
+  line-height: var(--btn-line-height);
+  letter-spacing: var(--btn-letter-spacing);
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  width: 100%;
+}
+
+.primary-btn {
+  background-color: maroon;
+  color: white;
+  border: none;
+}
+
+.secondary-btn {
+  color: maroon;
+  background-color: transparent;
+  border: 1px solid maroon;
+}
+
+/* --- Navigation Components --- */
+#main-logo {
+  height: 44px;
+  width: 44px;
+  margin: 0;
+}
+
+.upper-icons,
+.upper-buttons {
+  display: none;
+}
+
+/* --- Sidebar Components --- */
+.sidebar-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  width: 44px;
+  margin-left: auto;
+  background-color: transparent;
+  padding: 0.4rem 0;
+  border: none;
+}
+
+.line {
+  background-color: maroon;
+  height: 3px;
+  border-radius: 9999px;
+  width: 100%;
+}
+
+.sidebar-exit-btn {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-lg);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-exit-btn::before,
+.sidebar-exit-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 44px;
+  background-color: maroon;
+  border-radius: 9999px;
+}
+
+.sidebar-exit-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.sidebar-exit-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.sidebar-icons {
+  margin-bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-icons a {
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  color: maroon;
+  font-weight: 500;
+  width: 100%;
+  padding: var(--space-xs) 0;
+}
+
+.sidebar-buttons .btn {
+  width: 100%;
+  padding: 0.6em 1.2em;
+  margin-bottom: var(--space-sm);
+}
+
+/* --- Hero Section Content --- */
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl) 0;
+  text-align: left;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title {
+  font-size: var(--display-lg-size);
+  font-weight: var(--display-lg-weight);
+  line-height: var(--display-lg-line-height);
+  letter-spacing: var(--display-lg-letter-spacing);
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  font-size: var(--h3-size);
+  margin-bottom: var(--space-lg);
+  max-width: 65ch;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  width: 100%;
+}
+
+.hero-bottom-text {
+  text-align: inherit;
+}
+
+.hero-bottom-text h4 {
+  margin-bottom: var(--space-sm);
+}
+
+.hero-bottom-text a {
+  color: maroon;
+  text-decoration: underline;
+  font-size: var(--btn-size);
+  border: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.hero-bottom-text a:hover {
+  font-weight: 500;
+}
+
+.hero-circle {
+  display: none;
+}
+
+/* --- Hours Section Content --- */
+.hours-of-operation {
+  padding: var(--space-xl) 0;
+  width: 100%;
+  text-align: center;
+}
+
+.hours-of-operation h1 {
+  margin-bottom: var(--space-md);
+}
+
+.days-and-hours {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: var(--space-sm) 0;
+}
+
+.days {
+  font-weight: var(--h1-weight);
+}
+
+/* --- Work CTA Content --- */
+.work-cta-text {
+  width: 100%;
+}
+
+.work-cta-text h1 {
+  margin-bottom: var(--space-md);
+}
+
+.work-cta-text h3 {
+  margin-bottom: var(--space-lg);
+}
+
+/* --- Footer Components --- */
+.footer-brand h4 {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-links,
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: var(--body-size);
+}
+
+.footer-links a:hover {
+  color: #f2f2f2;
+  text-decoration: underline;
+}

@@ -1,0 +1,99 @@
+/* --- Subjects Hero --- */
+.subjects-hero,
+.subjects-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.subjects-hero {
+  position: relative;
+  text-align: center;
+}
+
+.subjects-hero-content {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+  width: 100%;
+}
+
+.subjects-hero-content h3,
+.subjects-hero-content input {
+  margin-top: 0;
+  width: 0;
+  min-width: 100%;
+}
+
+.subjects-hero-content h3 {
+  margin-bottom: var(--space-md);
+}
+
+.subjects-hero-content a {
+  display: block;
+  background-color: #ccc;
+  border-bottom: 2px solid maroon;
+}
+
+.subjects-hero-emphasis {
+  text-align: center;
+  color: maroon;
+}
+
+.subjects-hero-content input {
+  font-size: var(--btn-size);
+  font-weight: var(--btn-weight);
+  padding: 0.6em 1.5em;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: 1px solid maroon;
+  outline: none;
+}
+
+.line-break {
+  display: inline;
+}
+
+/* --- Subjects Menu & Boxes --- */
+.subjects-menu {
+  padding: var(--space-xl) 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.subjects-box {
+  width: 100%;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 20px;
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.subjects-box h1 {
+  margin-bottom: var(--space-md);
+}
+
+.subjects-content {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  border-top: 1px solid black;
+  padding-top: var(--space-md);
+  text-align: left;
+}
+
+.subjects-content a {
+  text-decoration: none;
+  font-size: var(--btn-size);
+  font-weight: 500;
+  color: maroon;
+  border-bottom: 1px solid #e2e2e2;
+  border-radius: 10px 10px 0 0;
+  padding: var(--space-xxs) var(--space-xs);
+}
