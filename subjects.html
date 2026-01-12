@@ -37,6 +37,9 @@ Writing and Reading Center
 <html lang="en">
 
 <head>
+  <!--Loading Scripts-->
+  <script src="/js/navigation.js" defer></script>
+
   <!--Importing Roboto font-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,13 +63,31 @@ Writing and Reading Center
         <a href="subjects.html" class="btn primary-btn">Find Your Subject</a>
         <a href="online-tutoring.html" class="btn secondary-btn">Online Tutoring</a>
       </nav>
-      <button class="sidenav-icon">
+      <button class="sidebar-btn">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </button>
     </div>
   </header>
+
+  <div class="overlay"></div>
+
+  <aside class="sidebar">
+    <button class="sidebar-exit-btn">
+      X
+    </button>
+    <nav class="sidebar-icons">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="#">Apply For Work</a>
+    </nav>
+    <nav class="sidebar-buttons">
+      <a href="subjects.html" class="btn primary-btn">Find Subject</a>
+      <a href="#" class="btn secondary-btn">Online Tutoring</a>
+    </nav>
+  </aside>
+
   <div class="subjects-hero">
     <div class="subjects-circle-left"></div>
     <div class="container">
@@ -84,56 +105,56 @@ Writing and Reading Center
     </div>
     <div class="subjects-circle-right"></div>
   </div>
-  <div class ="container">
+  <div class="container">
     <div class="subjects-menu">
 
       <div class="subjects-box">
         <h1>Math, Statistics, Engineering</h1>
-        <div class="subjects-content">
+        <ul class="subjects-content">
           <a href="math.html">Mathematics (MATH)</a>
           <a href="stats.html">Statistics (STAT)</a>
           <a href="engr.html">Engineering (ENGR)</a>
           <a href="grasp.html">GRASP</a>
-        </div>
+        </ul>
       </div>
 
       <div class="subjects-box">
         <h1>Sciences</h1>
-        <div class="subjects-content">
+        <ul class="subjects-content">
           <a href="bio.html">Biology (BIOL)</a>
           <a href="chem.html">Chemistry (CHEM)</a>
           <a href="physics.html">Physics (PHYS)</a>
           <a href="astro.html">Astronomy (ASTRO)</a>
           <a href="geol.html">Geology (GEOL)</a>
           <a href="geog.html">Geography (GEOG)</a>
-        </div>
+        </ul>
       </div>
 
       <div class="subjects-box">
         <h1>Writing, Reading & Languages</h1>
-        <div class="subjects-content">
+        <ul class="subjects-content">
           <a href="writing-center.html">Writing & Reading Center</a>
           <a href="english.html">English - PASS (ENGL/LIT)</a>
           <a href="comm.html">Communication (COMM)</a>
           <a href="languages.html">Foreign Languages</a>
           <a href="asl.html">American Sign Language (ASL)</a>
-        </div>
+        </ul>
       </div>
 
       <div class="subjects-box">
         <h1>Business & Technology</h1>
-        <div class="subjects-content">
+        <ul class="subjects-content">
           <a href="accounting.html">Accounting (ACCTG)</a>
           <a href="business.html">Business Admin (BA)</a>
           <a href="bus-tech.html">Business & Technology (BT)</a>
           <a href="cit.html">Comp. Info Tech (CIT)</a>
           <a href="csci.html">Computer Science (CSCI)</a>
-        </div>
+        </ul>
       </div>
 
       <div class="subjects-box">
         <h1>Social Sciences & Humanities</h1>
-        <div class="subjects-content">
+        <ul class="subjects-content">
           <a href="econ.html">Economics (ECON)</a>
           <a href="psych.html">Psychology (PSYC)</a>
           <a href="history.html">History (HIST)</a>
@@ -143,16 +164,16 @@ Writing and Reading Center
           <a href="music.html">Music (MUS)</a>
           <a href="amind.html">American Indian Studies (AMIND)</a>
           <a href="cls.html">Chicano-Latino Studies (CLS)</a>
-        </div>
+        </ul>
       </div>
 
       <div class="subjects-box">
         <h1>Nursing & Allied Health</h1>
-        <div class="subjects-content">
+        <ul class="subjects-content">
           <a href="nursing.html">RN/Nursing</a>
           <a href="nutrition.html">Food and Nutrition (FN)</a>
           <a href="teas.html">TEAS Test</a>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -160,7 +181,7 @@ Writing and Reading Center
     <div class="footer-content container">
       <div class="footer-brand">
         <h4>Fresno City College Tutorial Services</h4>
-        <p class="body-xl-lg">Supporting student success through in-person and online tutoring.</p>
+        <p>Supporting student success through in-person and online tutoring.</p>
       </div>
       <div class="footer-links">
         <h4>Quick Links</h4>

@@ -121,6 +121,24 @@ body {
   overflow-x: hidden;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  opacity: 0;            /* start invisible */
+  visibility: hidden;    /* prevent clicks */
+  transition: opacity 0.3s ease;
+  z-index: 900;          /* below sidebar (1000) */
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 h1 {
   font-size: var(--h1-size);
   font-weight: var(--h1-weight);
@@ -177,6 +195,12 @@ h6 {
   letter-spacing: var(--display-md-letter-spacing);
 }
 
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
 #main-logo {
   height: 44px;
   width: 44px;
@@ -194,10 +218,10 @@ header {
   background-color: white;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 800;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: auto;
-  padding: var(--space-sm) 0;
+  padding: 1rem 0;
   margin: 0;
   width: 100%;
 }
@@ -208,7 +232,7 @@ header {
   font-size: var(--btn-size);
 }
 
-.sidenav-icon {
+.sidebar-btn {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -218,6 +242,78 @@ header {
   margin-left: auto;
   background-color: transparent;
   border: none;
+}
+
+.sidebar-exit-btn {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-exit-btn::before,
+.sidebar-exit-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background-color: maroon;
+  border-radius: 9999px;
+}
+
+.sidebar-exit-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.sidebar-exit-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 260px;
+  height: 100vh;
+  background-color: f2f2f2;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem;
+}
+
+.sidebar-icons {
+  margin-bottom: 3rem;
+}
+
+.sidebar-icons a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-bottom: 2px solid maroon;
+  color: maroon;
+  font-weight: 500;
+  width: 100%;
+  padding: 0.75rem
+}
+
+.sidebar-buttons .btn {
+  width: 100%;
+  padding: 0.6em 1.2em;
+  margin-bottom: 1rem;
+}
+
+.sidebar.open {
+  transform: translateX(0);
 }
 
 .line {
@@ -260,6 +356,7 @@ header {
 
 a {
   transition: all 0.1s ease-in-out;
+  font-size: var(--btn-size);
 }
 
 .hero {
@@ -288,12 +385,10 @@ a {
   line-height: var(--display-lg-line-height);
   letter-spacing: var(--display-lg-letter-spacing);
   margin-bottom: var(--space-md);
-  margin-top: 0;
 }
 
 .hero-subtitle {
   font-size: var(--h3-size);
-  margin-top: 0;
   margin-bottom: var(--space-lg);
   max-width: 65ch;
 }
@@ -307,7 +402,6 @@ a {
 }
 
 .hero-bottom-text {
-  margin-top: 0;
   text-align: inherit;
 }
 
@@ -343,17 +437,13 @@ a {
 }
 
 .hours-of-operation h1 {
-  margin-top: 0;
+  margin-bottom: var(--space-md);
 }
 
 .days-and-hours {
   display: grid;
   grid-template-columns: 1fr;
   padding: var(--space-sm) 0;
-}
-
-.days-and-hours h3 {
-  margin: 0;
 }
 
 .days {
@@ -381,12 +471,10 @@ a {
 }
 
 .work-cta-text h1 {
-  margin-top: 0;
   margin-bottom: var(--space-md);
 }
 
 .work-cta-text h3 {
-  margin-top: 0;
   margin-bottom: var(--space-lg);
 }
 
@@ -396,17 +484,21 @@ a {
   padding: var(--space-xl) 0;
 }
 
+.footer-brand h4 {
+  margin-bottom: var(--space-sm);
+}
+
 .footer-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .footer-links,
 .footer-meta {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs)
+  gap: var(--space-sm);
 }
 
 .footer-links a {
@@ -417,10 +509,6 @@ a {
 .footer-links a:hover {
   color: #f2f2f2;
   text-decoration: underline;
-}
-
-.footer-meta p {
-  margin: 0;
 }
 
 /* Subjects Page CSS */
@@ -446,14 +534,15 @@ a {
   width: 100%;
 }
 
-.subjects-hero-content h1 {
-  margin: 0;
-}
-
 .subjects-hero-content h3,
 .subjects-hero-content input {
+  margin-top: 0;
   width: 0;
   min-width: 100%;
+}
+
+.subjects-hero-content h3 {
+  margin-bottom: var(--space-md);
 }
 
 .line-break {
@@ -461,7 +550,6 @@ a {
 }
 
 .subjects-hero-emphasis {
-  margin: 0;
   text-align: center;
   color: maroon;
 }
@@ -494,7 +582,6 @@ a {
 }
 
 .subjects-box h1 {
-  margin-top: 0;
   margin-bottom: var(--space-md);
 }
 
@@ -538,7 +625,6 @@ a {
   }
 
   header {
-    padding: var(--space-sm) 0;
     display: flex;
     align-items: center;
     /* making sure that the top and bottom paddings are identical */
@@ -587,7 +673,11 @@ a {
     margin-left: auto;
   }
 
-  .sidenav-icon {
+  .sidebar-btn {
+    display: none;
+  }
+
+  .sidebar {
     display: none;
   }
 
@@ -661,10 +751,6 @@ a {
   .footer-content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-  }
-
-  .footer-content h4 {
-    margin-top: 0;
   }
 }
 
