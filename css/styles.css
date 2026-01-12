@@ -221,7 +221,7 @@ header {
   z-index: 800;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: auto;
-  padding: 1rem 0;
+  padding: var(--space-sm) 0;
   margin: 0;
   width: 100%;
 }
@@ -233,23 +233,24 @@ header {
 }
 
 .sidebar-btn {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   height: 44px;
   width: 44px;
   margin-left: auto;
   background-color: transparent;
+  padding: 0.4rem 0;
   border: none;
 }
 
 .sidebar-exit-btn {
-  width: 64px;
-  height: 64px;
+  width: 44px;
+  height: 44px;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: var(--space-md); /* same as header verttical padding */
+  right: var(--space-lg); /* same as container right padding */
   background: transparent;
   border: none;
   cursor: pointer;
@@ -261,8 +262,8 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 2px;
-  height: 20px;
+  width: 3px;
+  height: 44px;
   background-color: maroon;
   border-radius: 9999px;
 }
@@ -288,28 +289,28 @@ header {
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.75rem;
+  padding: var(--space-xxl) var(--space-md);
 }
 
 .sidebar-icons {
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-icons a {
-  display: flex;
-  flex-direction: column;
   text-decoration: none;
-  border-bottom: 2px solid maroon;
+  border-bottom: 1px solid #ccc;
   color: maroon;
   font-weight: 500;
   width: 100%;
-  padding: 0.75rem
+  padding: var(--space-xs) 0;
 }
 
 .sidebar-buttons .btn {
   width: 100%;
   padding: 0.6em 1.2em;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-sm);
 }
 
 .sidebar.open {
@@ -318,7 +319,7 @@ header {
 
 .line {
   background-color: maroon;
-  height: 5px;
+  height: 3px;
   border-radius: 9999px;
   width: 100%;
 }
@@ -355,7 +356,7 @@ header {
 }
 
 a {
-  transition: all 0.1s ease-in-out;
+  transition: font-weight 0.1s ease-in-out;
   font-size: var(--btn-size);
 }
 
@@ -504,6 +505,7 @@ a {
 .footer-links a {
   color: #ccc;
   text-decoration: none;
+  font-size: var(--body-size);
 }
 
 .footer-links a:hover {
@@ -543,6 +545,12 @@ a {
 
 .subjects-hero-content h3 {
   margin-bottom: var(--space-md);
+}
+
+.subjects-hero-content a {
+  display: block;
+  background-color: #ccc;
+  border-bottom: 2px solid maroon
 }
 
 .line-break {
@@ -587,21 +595,22 @@ a {
 
 .subjects-content {
   display: grid;
+  grid-template-rows: 1fr;
   grid-template-columns: 1fr;
   gap: var(--space-md);
-  border-top: 1px solid grey;
+  border-top: 1px solid black;
   padding-top: var(--space-md);
-  text-align: center;
+  text-align: left
 }
 
 .subjects-content a {
+  text-decoration: none;
   font-size: var(--btn-size);
-  color: maroon;
-  text-decoration: underline;
-}
-
-.subjects-content a:hover {
   font-weight: 500;
+  color: maroon;
+  border-bottom: 1px solid #e2e2e2;
+  border-radius: 10px 10px 0 0;
+  padding: var(--space-xxs) var(--space-xs); /* subtle divider */
 }
 
 @media (min-width: 500px) {
@@ -742,6 +751,14 @@ a {
   .subjects-content {
     grid-template-columns: 1fr 1fr;
     text-align: left;
+  }
+
+  .subjects-content a {
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .subjects-content a:hover {
+    background-color: #e2e2e2;
   }
 
   .subjects-box {
