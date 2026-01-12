@@ -90,9 +90,9 @@
 }
 
 .sidebar-icons {
-  margin-bottom: var(--space-xl);
   display: flex;
   flex-direction: column;
+  margin-bottom: var(--space-lg);
 }
 
 .sidebar-icons a {
