@@ -1,18 +1,18 @@
 /* --- Subjects Hero --- */
-.subjects-hero,
-.subjects-hero-content {
+#subjects-hero,
+#subjects-hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.subjects-hero {
+#subjects-hero {
   position: relative;
   text-align: center;
 }
 
-.subjects-hero-content {
+#subjects-hero-content {
   display: inline-flex;
   flex-direction: column;
   margin: 0 auto;
@@ -20,29 +20,29 @@
   width: 100%;
 }
 
-.subjects-hero-content h3,
-.subjects-hero-content input {
+#subjects-hero-content h3,
+#subject-search {
   margin-top: 0;
   width: 0;
   min-width: 100%;
 }
 
-.subjects-hero-content h3 {
+#subjects-hero-content h3 {
   margin-bottom: var(--space-md);
 }
 
-.subjects-hero-content a {
+#subjects-hero-content a {
   display: block;
   background-color: #ccc;
   border-bottom: 2px solid maroon;
 }
 
-.subjects-hero-emphasis {
+#subjects-hero-emphasis {
   text-align: center;
   color: maroon;
 }
 
-.subjects-hero-content input {
+#subject-search {
   font-size: var(--btn-size);
   font-weight: var(--btn-weight);
   padding: 0.6em 1.5em;
@@ -57,7 +57,7 @@
 }
 
 /* --- Subjects Menu & Boxes --- */
-.subjects-menu {
+#subjects-menu {
   padding: var(--space-xl) 0;
   margin: 0 auto;
   display: flex;

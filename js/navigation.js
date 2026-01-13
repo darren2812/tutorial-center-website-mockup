@@ -1,7 +1,7 @@
-const sidebarBtn = document.querySelector('.sidebar-btn');
-const sidebar = document.querySelector('.sidebar');
-const sidebarExit = document.querySelector('.sidebar-exit-btn');
-const overlay = document.querySelector('.overlay');
+const sidebarBtn = document.getElementById("sidebar-btn");
+const sidebar = document.getElementById("sidebar");
+const sidebarExit = document.getElementById("sidebar-exit-btn");
+const overlay = document.getElementById("overlay");
 
 sidebarBtn.addEventListener('click', () => {
     sidebar.classList.toggle('open');

@@ -38,7 +38,7 @@
 }
 
 /* --- Sidebar Components --- */
-.sidebar-btn {
+#sidebar-btn {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -58,7 +58,7 @@
   width: 100%;
 }
 
-.sidebar-exit-btn {
+#sidebar-exit-btn {
   width: 44px;
   height: 44px;
   position: absolute;
@@ -69,8 +69,8 @@
   cursor: pointer;
 }
 
-.sidebar-exit-btn::before,
-.sidebar-exit-btn::after {
+#sidebar-exit-btn::before,
+#sidebar-exit-btn::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -81,11 +81,11 @@
   border-radius: 9999px;
 }
 
-.sidebar-exit-btn::before {
+#sidebar-exit-btn::before {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.sidebar-exit-btn::after {
+#sidebar-exit-btn::after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
@@ -111,7 +111,7 @@
 }
 
 /* --- Hero Section Content --- */
-.hero-inner {
+#hero-inner {
   display: flex;
   flex-direction: column;
   padding: var(--space-xl) 0;
@@ -120,26 +120,22 @@
   width: 100%;
 }
 
-.hero-text {
+#hero-text {
   display: flex;
   flex-direction: column;
 }
 
 .hero-title {
-  font-size: var(--display-lg-size);
-  font-weight: var(--display-lg-weight);
-  line-height: var(--display-lg-line-height);
-  letter-spacing: var(--display-lg-letter-spacing);
   margin-bottom: var(--space-md);
 }
 
-.hero-subtitle {
+#hero-subtitle {
   font-size: var(--h3-size);
   margin-bottom: var(--space-lg);
   max-width: 65ch;
 }
 
-.hero-buttons {
+#hero-buttons {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
@@ -147,15 +143,15 @@
   width: 100%;
 }
 
-.hero-bottom-text {
+#hero-bottom-text {
   text-align: inherit;
 }
 
-.hero-bottom-text h4 {
+#hero-bottom-text h4 {
   margin-bottom: var(--space-sm);
 }
 
-.hero-bottom-text a {
+#hero-bottom-text a {
   color: maroon;
   text-decoration: underline;
   font-size: var(--btn-size);
@@ -164,22 +160,22 @@
   margin-bottom: 0;
 }
 
-.hero-bottom-text a:hover {
+#hero-bottom-text a:hover {
   font-weight: 500;
 }
 
-.hero-circle {
+#hero-circle {
   display: none;
 }
 
 /* --- Hours Section Content --- */
-.hours-of-operation {
+#hours-of-operation {
   padding: var(--space-xl) 0;
   width: 100%;
   text-align: center;
 }
 
-.hours-of-operation h1 {
+#hours-of-operation h1 {
   margin-bottom: var(--space-md);
 }
 
@@ -194,37 +190,37 @@
 }
 
 /* --- Work CTA Content --- */
-.work-cta-text {
+#work-cta-text {
   width: 100%;
 }
 
-.work-cta-text h1 {
+#work-cta-text h1 {
   margin-bottom: var(--space-md);
 }
 
-.work-cta-text h3 {
+#work-cta-text h3 {
   margin-bottom: var(--space-lg);
 }
 
 /* --- Footer Components --- */
-.footer-brand h4 {
+#footer-brand h4 {
   margin-bottom: var(--space-sm);
 }
 
-.footer-links,
-.footer-meta {
+#footer-links,
+#footer-meta {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
 }
 
-.footer-links a {
+#footer-links a {
   color: #ccc;
   text-decoration: none;
   font-size: var(--body-size);
 }
 
-.footer-links a:hover {
+#footer-links a:hover {
   color: #f2f2f2;
   text-decoration: underline;
 }
