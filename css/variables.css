@@ -76,4 +76,14 @@
   --space-lg: clamp(2rem, 1.8333rem + 0.7407vw, 2.5rem);
   --space-xl: clamp(3rem, 2.75rem + 1.1111vw, 3.75rem);
   --space-xxl: clamp(4rem, 3.6667rem + 1.4815vw, 5rem);
+
+  /* Colors */
+  --color-primary: maroon;
+  --color-secondary: #e2e2e2;
+  --color-tertiary: #ccc;
+  --color-background: #f8f8f8;
+  --color-background-gradient: linear-gradient(180deg, #f8f8f8 0%, #f2f2f2 50%, #ededed 100%);
+  --color-text: #121212;
+  --color-white: #ffffff;
+
 }

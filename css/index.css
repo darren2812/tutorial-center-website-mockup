@@ -1,0 +1,91 @@
+/* --- Hero Section Content --- */
+#hero-inner {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl) 0;
+  text-align: left;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title {
+  margin-bottom: var(--space-md);
+}
+
+#hero-subtitle {
+  font-size: var(--h3-size);
+  margin-bottom: var(--space-lg);
+  max-width: 65ch;
+}
+
+#hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  width: 100%;
+}
+
+#hero-bottom-text {
+  text-align: inherit;
+}
+
+#hero-bottom-text h4 {
+  margin-bottom: var(--space-sm);
+}
+
+#hero-bottom-text a {
+  color: maroon;
+  text-decoration: underline;
+  font-size: var(--btn-size);
+  border: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+#hero-bottom-text a:hover {
+  font-weight: 500;
+}
+
+#hero-circle {
+  display: none;
+}
+
+/* --- Hours Section Content --- */
+#hours-of-operation {
+  padding: var(--space-xl) 0;
+  width: 100%;
+  text-align: center;
+}
+
+#hours-of-operation h1 {
+  margin-bottom: var(--space-md);
+}
+
+.days-and-hours {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: var(--space-sm) 0;
+}
+
+.days {
+  font-weight: var(--h1-weight);
+}
+
+/* --- Work CTA Content --- */
+#work-cta-text {
+  width: 100%;
+}
+
+#work-cta-text h1 {
+  margin-bottom: var(--space-md);
+}
+
+#work-cta-text h3 {
+  margin-bottom: var(--space-lg);
+}

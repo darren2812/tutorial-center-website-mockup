@@ -39,7 +39,7 @@
     gap: var(--space-lg);
     margin-right: auto;
     margin-left: var(--space-lg);
-    color: black;
+    color: var(--color-black);
   }
 
   .upper-icons a {
@@ -57,7 +57,7 @@
   }
 
   .secondary-btn:hover {
-    background-color: #e2e2e2;
+    background-color: var(--color-secondary);
   }
 
   .upper-buttons {
@@ -97,7 +97,7 @@
     height: clamp(800px, 75vw, 1000px);
     transform: translate(40%, 25%);
     border-radius: 50%;
-    background-color: maroon;
+    background-color: var(--color-primary);
     z-index: 0;
   }
 
@@ -117,7 +117,7 @@
     position: absolute;
     width: clamp(300px, 30vw, 700px);
     height: clamp(300px, 30vw, 700px);
-    background-color: maroon;
+    background-color: var(--color-primary);
     z-index: 0;
     border-radius: 50%;
   }
@@ -144,10 +144,10 @@
   }
 
   .subjects-content a:hover {
-    background-color: #e2e2e2;
+    background-color: var(--color-secondary);
   }
 
-  .subjects-box {
+  .rounded-box {
     width: 80%;
   }
 
