@@ -1,5 +1,5 @@
 const searchInput = document.getElementById('subject-search');
-const subjectBoxes = document.querySelectorAll('.subjects-box');
+const subjectBoxes = document.querySelectorAll('.rounded-box');
 
 // OPTIMIZATION: 
 // Pre-calculate the relationship between boxes and links once on load.

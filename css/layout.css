@@ -92,6 +92,52 @@ header {
   background: maroon;
 }
 
+/* --- Subjects Hero --- */
+#subjects-hero,
+#subjects-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#subjects-hero {
+  position: relative;
+  text-align: center;
+}
+
+#subjects-hero-content {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+  width: 100%;
+}
+
+.subjects-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  border-top: 1px solid var(--color-text);
+  padding-top: var(--space-md);
+  text-align: left;
+}
+
+/* --- Contacts Wrapper --- */
+
+#contact-hero {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-sm);
+}
+
+#contacts-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  place-items: center;
+  padding-bottom: var(--space-xl);
+}
+
 /* Footer Layout */
 #site-footer {
   color: var(--color-background);
