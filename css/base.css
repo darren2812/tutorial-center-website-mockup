@@ -15,7 +15,7 @@ body {
   font-weight: var(--body-weight);
   line-height: var(--body-line-height);
   letter-spacing: var(--body-letter-spacing);
-  background: linear-gradient(180deg, #f8f8f8 0%, #f2f2f2 50%, #ededed 100%);
+  background: var(--color-background-gradient);
   color: #121212;
   overflow-x: hidden;
 }

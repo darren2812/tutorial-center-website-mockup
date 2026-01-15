@@ -47,7 +47,7 @@ header {
   top: 0;
   right: 0;
   left: auto;
-  width: 260px;
+  width: 320px;
   height: 100vh;
   background-color: var(--color-background);
   transform: translateX(100%);

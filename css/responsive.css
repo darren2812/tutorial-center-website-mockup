@@ -151,6 +151,32 @@
     width: 80%;
   }
 
+  /*
+  #contact-circle-left,
+  #contact-circle-right {
+    display: inline-block;
+    position: absolute;
+    width: clamp(100px, 25vw, 500px);
+    height: clamp(100px, 25vw, 500px);
+    background-color: var(--color-background);
+    border: clamp(20px, 5vw, 100px)solid var(--color-primary);
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  #contact-circle-left {
+    top: 0;
+    left: 0;
+    transform: translate(-70%, 100%);
+  }
+
+   #contact-circle-right {
+    top: 0;
+    right: 0;
+    transform: translate(70%, -10%);
+  }
+  */
+
   .contact-img {
     margin: 0;
     order: 2;
