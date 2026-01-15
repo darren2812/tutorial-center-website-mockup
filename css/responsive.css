@@ -62,7 +62,7 @@
 
   .upper-buttons {
     display: flex;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     margin-left: auto;
   }
 
@@ -121,7 +121,7 @@
     z-index: 0;
     border-radius: 50%;
   }
-  
+
   #subjects-circle-left {
     top: 0;
     left: 0;
@@ -151,6 +151,23 @@
     width: 80%;
   }
 
+  .contact-img {
+    margin: 0;
+    order: 2;
+  }
+
+  .contact-box-content {
+    flex-direction: row;
+    width: 720px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-box-text {
+    text-align: left;
+    order: 1;
+  }
+
   #footer-content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -165,5 +182,11 @@
   .upper-icons {
     gap: var(--space-xl);
     margin-left: var(--space-xl);
+  }
+
+  .upper-buttons {
+    display: flex;
+    gap: var(--space-lg);
+    margin-left: auto;
   }
 }

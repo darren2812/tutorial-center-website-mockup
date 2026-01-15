@@ -73,7 +73,7 @@ header {
 }
 
 #hours-background {
-  background-color: var(--color-secondary);
+  background-color: #ededed;
 }
 
 #work-cta {
@@ -126,16 +126,27 @@ header {
 /* --- Contacts Wrapper --- */
 
 #contact-hero {
-  padding-top: var(--space-xl);
-  padding-bottom: var(--space-sm);
+  position: relative;
 }
 
-#contacts-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-  place-items: center;
-  padding-bottom: var(--space-xl);
+#contact-hero .container {
+  display: flex;
+  justify-content: center;
+}
+
+#contact-hero-content {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  max-width: 720px;
+}
+
+.contact-box-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 720px;
+  text-align: left;
 }
 
 /* Footer Layout */
