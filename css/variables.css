@@ -35,7 +35,7 @@
   --h3-line-height: 1.6;
   --h3-letter-spacing: 0em;
 
-  --h4-size: 1.25rem;
+  --h4-size: clamp(1rem, 0.8977rem + 0.4545vw, 1.25rem);
   --h4-weight: 500;
   --h4-line-height: 1.35;
   --h4-letter-spacing: 0.005em;
@@ -63,7 +63,7 @@
   --body-sm-letter-spacing: 0.015em;
 
   /* Button Text */
-  --btn-size: 1.1rem;
+  --btn-size: 1.15rem;
   --btn-weight: 400;
   --btn-line-height: 1;
   --btn-letter-spacing: 0.02em;

@@ -110,18 +110,18 @@
   margin-bottom: var(--space-sm);
 }
 
-.rounded-box {
+.subjects-box {
   width: 100%;
   border: 1px solid var(--color-tertiary);
   background-color: var(--color-white);
   border-radius: 20px;
 }
 
-.rounded-box-content {
+.subjects-box-content {
   padding: var(--space-lg) var(--space-xl);
 }
 
-.rounded-box h1 {
+.subjects-box h2 {
   margin-bottom: var(--space-md);
 }
 
@@ -194,10 +194,6 @@
   margin-bottom: var(--space-md);
 }
 
-.days-and-hours h3 {
-  margin: 0;
-}
-
 .days-and-hours {
   display: grid;
   padding: var(--space-sm) 0;
@@ -213,12 +209,13 @@
   width: 100%;
 }
 
-#work-cta-text h1 {
+#work-cta-text h2 {
   margin-bottom: var(--space-md);
 }
 
 #work-cta-text h3 {
   margin-bottom: var(--space-lg);
+  font-weight: 400;
 }
 
 /* --- Subjects Components --- */
@@ -230,7 +227,7 @@
 }
 
 #subjects-hero-content h1,
-h3 {
+#subjects-hero-content h3 {
   margin-bottom: var(--space-md);
 }
 
@@ -318,15 +315,17 @@ h3 {
   order: 2;
 }
 
-.contact-box-text h2 {
-  margin-bottom: var(--space-xs);
+.coordinator-name {
+  margin-bottom: var(--space-xxs);
+  font-weight: 500;
 }
 
-.contact-box-text h3 {
+.contact-position {
   margin-bottom: var(--space-md);
+  font-weight: 400;
 }
 
-.contact-box-text h4 {
+.contact-email {
   text-decoration: underline;
   color: maroon;
 }
@@ -353,3 +352,15 @@ h3 {
   color: var(--color-background);
   text-decoration: underline;
 }
+
+/*--- Individual Subjects Page ---*/
+.schedule iframe {
+  width: 100%;
+  max-width: 1129px;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  overflow: auto;
+}
+
