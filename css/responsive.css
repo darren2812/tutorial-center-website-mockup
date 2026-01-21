@@ -47,7 +47,8 @@
     text-decoration: none;
   }
 
-  .upper-icons a:hover {
+  .upper-icons a:hover,
+  .upper-icons button:hover {
     color: maroon;
     font-weight: 500;
   }

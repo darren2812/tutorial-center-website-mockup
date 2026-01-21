@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+  <!--Loading Scripts-->
+  <script src="/js/partials.js" defer></script>
+  <script src="/js/navigation.js" defer></script>
+  <script src="/js/subjects.js" defer></script>
+
+  <!--Importing Roboto font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!--Stylesheet-->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+  <header id="header">
+  </header>
+
+  <div id="overlay"></div>
+
+  <aside id="sidebar">
+  </aside>
+
+  <main id="subjects-main">
+    <div class="container">
+      <div id="subject-info">
+        <h1 id="subject-title" class="display-lg"></h1>
+        <h3 id="subject-disclaimer">
+          Schedules may change if a tutor calls out sick or
+          due to an unforeseen circumstance.
+        </h3>
+      </div>
+    </div>
+    <div class="container">
+      <div id="drop-in-info">
+        <h1>Drop in tutoring at <span id="drop-in-location"></span></h1>
+        <div class="schedule-container">
+          <section class="schedule">
+            <iframe id="drop-in-iframe" loading="lazy">
+            </iframe>
+          </section>
+        </div>
+      </div>
+      <div id="etc-info">
+        <h1>ETC Tutoring</h1>
+        <h4>
+          Extended the Class Tutoring sessions are available for the following instructors. 
+          Please refer to the schedule below to find your assigned tutoring session.
+        </h4>
+        <div class="schedule-container">
+          <section class="schedule">
+            <iframe id="etc-iframe" loading="lazy">
+            </iframe>
+          </section>
+        </div>
+      </div>
+      <div id="online-info">
+        <h1>Online Tutoring</h1>
+        <div class="schedule-container">
+          <section class="schedule">
+            <iframe id="online-iframe" loading="lazy">
+            </iframe>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer">
+  </footer>
+
+</body>
+
+</html>

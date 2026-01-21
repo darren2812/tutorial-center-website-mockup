@@ -1,0 +1,11 @@
+{
+    "engr": {
+        "name": "Engineering (ENGR)",
+        "sections": {
+            "drop-in": {
+                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQhkPaC_2hMsW0u5LPV9YHUPhu9MQ2FjsD7R-8BU_83Kj-AFB60i1FH63yK8WMIxUJXAdz7TyxlngnQ/pubhtml?gid=0&single=true&range=A1:H10&widget=false&headers=false&chrome=false",
+                "location": "LI-134"
+            }
+        }
+    }
+}

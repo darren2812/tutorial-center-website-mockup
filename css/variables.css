@@ -37,7 +37,7 @@
 
   --h4-size: clamp(1rem, 0.8977rem + 0.4545vw, 1.25rem);
   --h4-weight: 500;
-  --h4-line-height: 1.35;
+  --h4-line-height: 1.6;
   --h4-letter-spacing: 0.005em;
 
   --h5-size: 1rem;

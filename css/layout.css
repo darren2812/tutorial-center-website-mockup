@@ -65,6 +65,30 @@ header {
   padding: var(--space-xxl) var(--space-md);
 }
 
+/* Navigation Dropdown */
+
+#nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#nav-dropdown-content {
+  display: none;
+}
+
+#nav-dropdown-content.open {
+  padding: var(--space-md) var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 100%;
+  max-width: fit-content
+}
+
 /* Section Wrappers */
 #hero {
   display: flex;
@@ -163,13 +187,9 @@ header {
 }
 
 /*--- Individual Subjects Page ---*/
-.subject-info {
+#subject-info {
   padding-top: var(--space-xl);
   padding-bottom: var(--space-lg);
-}
-
-.subject-info h1 {
-  margin-bottom: var(--space-md);
 }
 
 .schedule-container {
