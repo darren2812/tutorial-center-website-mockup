@@ -82,7 +82,7 @@ p, ul, ol, li, blockquote {
   padding: 0;
 }
 
-a {
+a, button {
   transition: font-weight 0.1s ease-in-out;
   font-size: var(--btn-size);
 }

@@ -47,8 +47,22 @@
     text-decoration: none;
   }
 
+  .upper-icons button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+  }
+
   .upper-icons a:hover,
   .upper-icons button:hover {
+    color: maroon;
+    font-weight: 500;
+  }
+
+  #nav-dropdown-content a:hover {
     color: maroon;
     font-weight: 500;
   }

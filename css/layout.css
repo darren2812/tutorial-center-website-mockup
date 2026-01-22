@@ -81,8 +81,8 @@ header {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: calc(100% + var(--space-md));
+  left: calc(-1 * var(--space-sm));
   background-color: var(--color-white);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   min-width: 100%;
