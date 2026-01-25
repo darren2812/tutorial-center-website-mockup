@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
 }
@@ -65,7 +65,21 @@ header {
   padding: var(--space-xxl) var(--space-md);
 }
 
-/* Navigation Dropdown */
+#sidebar-dropdown {
+  position: relative;
+  display: block;
+}
+
+#sidebar-dropdown-content {
+  display: none;
+}
+
+#sidebar-dropdown-content.open {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Dropdown */
 
 #nav-dropdown {
   position: relative;
@@ -89,11 +103,21 @@ header {
   max-width: fit-content
 }
 
-/* Section Wrappers */
+/*--- Landing Page ---*/
+
 #hero {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+#hero-inner {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl) 0;
+  text-align: left;
+  align-items: flex-start;
+  width: 100%;
 }
 
 #hours-background {
@@ -102,7 +126,8 @@ header {
 
 #work-cta {
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
   padding: var(--space-xl) 0;
 }
 
@@ -116,7 +141,7 @@ header {
   background: maroon;
 }
 
-/* --- Subjects Hero --- */
+/* --- Subjects Page --- */
 #subjects-hero,
 #subjects-hero-content {
   display: flex;
@@ -178,6 +203,8 @@ header {
   color: var(--color-background);
   background-color: var(--color-primary);
   padding: var(--space-xl) 0;
+  position: relative;
+  z-index: 1000;
 }
 
 #footer-content {
@@ -195,3 +222,23 @@ header {
 .schedule-container {
   padding-bottom: var(--space-xl);
 }
+
+/*--- Apply For Work Page ---*/
+
+#work-hero-inner {
+  padding: var(--space-xl) 0;
+  max-width: 65ch;
+}
+
+.work-section {
+  padding: var(--space-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-section-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+

@@ -92,14 +92,25 @@
 .sidebar-icons {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--space-lg);
+  margin: var(--space-lg) 0;
 }
 
-.sidebar-icons a {
+.sidebar-icons button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  padding: 0;
+}
+
+.sidebar-icons a,
+.sidebar-icons button {
   text-decoration: none;
   border-bottom: 1px solid var(--color-tertiary);
   color: var(--color-primary);
   font-weight: 500;
+  font-size: var(--btn-size);
   width: 100%;
   padding: var(--space-xs) 0;
 }
@@ -109,6 +120,25 @@
   padding: 0.6em 1.2em;
   margin-bottom: var(--space-sm);
 }
+
+#sidebar-dropdown-content a {
+  padding-left: var(--space-md);
+}
+
+#sidebar-dropdown-arrow {
+  display: inline-block;
+  padding-left: 0px;
+  padding-right: 5px;
+  transition: 0.2s transform ease;
+}
+
+#sidebar-dropdown-arrow.open {
+  transform: rotate(180deg) translateY(-5px);
+  padding-left: 5px;
+  padding-right: 0px;
+}
+
+/* -- Subjects Coomponents -- */
 
 .subjects-box {
   width: 100%;
@@ -131,6 +161,19 @@
   width: auto;
 }
 
+#nav-dropdown-arrow {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 0px;
+  transition: 0.2s transform ease;
+}
+
+#nav-dropdown-arrow.open {
+  transform: rotate(180deg) translateY(-5px);
+  padding-left: 0px;
+  padding-right: 5px;
+}
+
 #nav-dropdown-content a {
   color: var(--color-text);
   font-weight: 400;
@@ -145,14 +188,6 @@
 }
 
 /* --- Hero Section Content --- */
-#hero-inner {
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-xl) 0;
-  text-align: left;
-  align-items: flex-start;
-  width: 100%;
-}
 
 #hero-text {
   display: flex;
@@ -172,7 +207,7 @@
 #hero-buttons {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   margin-bottom: var(--space-lg);
   width: 100%;
 }
@@ -349,6 +384,11 @@
   color: var(--color-primary);
 }
 
+/* --- Computer Lab Components --- */
+#computer-lab-hero-circle {
+  display: none;
+}
+
 /* --- Footer Components --- */
 #footer-brand h4 {
   margin-bottom: var(--space-sm);
@@ -401,3 +441,29 @@
   margin-bottom: var(--space-sm);
 }
 
+/* --- Apply For Work Page ---*/
+#work-hero h1 {
+  margin-bottom: var(--space-md);
+}
+
+.work-section-inner h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.work-section-inner h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.work-section-inner li {
+  font-size: var(--h3-size);
+}
+
+.work-section-inner ul {
+  margin-bottom: var(--space-lg);
+}
+
+.work-section-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
