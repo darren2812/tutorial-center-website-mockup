@@ -123,19 +123,17 @@
 
 #sidebar-dropdown-content a {
   padding-left: var(--space-md);
+  border-bottom: none;
 }
 
 #sidebar-dropdown-arrow {
   display: inline-block;
-  padding-left: 0px;
-  padding-right: 5px;
+  margin-right: 10px;
   transition: 0.2s transform ease;
 }
 
 #sidebar-dropdown-arrow.open {
   transform: rotate(180deg) translateY(-5px);
-  padding-left: 5px;
-  padding-right: 0px;
 }
 
 /* -- Subjects Coomponents -- */
@@ -163,15 +161,12 @@
 
 #nav-dropdown-arrow {
   display: inline-block;
-  padding-left: 5px;
-  padding-right: 0px;
+  margin-left: 10px;
   transition: 0.2s transform ease;
 }
 
 #nav-dropdown-arrow.open {
   transform: rotate(180deg) translateY(-5px);
-  padding-left: 0px;
-  padding-right: 5px;
 }
 
 #nav-dropdown-content a {
@@ -238,13 +233,13 @@
 }
 
 /* --- Hours Section Content --- */
-#hours-of-operation {
+.hours-of-operation-inner {
   padding: var(--space-xl) 0;
   width: 100%;
   text-align: center;
 }
 
-#hours-of-operation h1 {
+.hours-of-operation-inner h1 {
   margin-bottom: var(--space-md);
 }
 
@@ -252,6 +247,15 @@
   display: grid;
   padding: var(--space-sm) 0;
   grid-template-columns: 1fr;
+}
+
+.days-and-hours:last-of-type {
+  margin-bottom: var(--space-md);
+}
+
+.closed-info {
+  font-weight: 500;
+  color: var(--color-primary);
 }
 
 .days {
@@ -466,4 +470,27 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+}
+
+/* --- English PASS Center Page --- */
+.tutoring-options-inner h1:first-child {
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-text);
+  margin-bottom: var(--space-md)
+}
+
+.tutoring-options-inner h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.tutoring-options-inner h3 {
+  margin-bottom: var(--space-md);
+}
+
+.tutoring-options-inner h3:last-of-type {
+  margin-bottom: var(--space-sm);
+}
+
+#tutoring-options-box {
+  width: fit-content
 }

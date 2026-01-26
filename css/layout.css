@@ -120,7 +120,7 @@ header {
   width: 100%;
 }
 
-#hours-background {
+.hours-of-operation {
   background-color: #ededed;
 }
 
@@ -225,13 +225,18 @@ header {
 
 /*--- Apply For Work Page ---*/
 
+#work-hero .container {
+  display: flex;
+  justify-content: center;
+}
+
 #work-hero-inner {
   padding: var(--space-xl) 0;
   max-width: 65ch;
 }
 
 .work-section {
-  padding: var(--space-xl) 0;
+  padding: calc(2 * var(--space-xl)) 0;
   position: relative;
   overflow: hidden;
 }
@@ -239,6 +244,27 @@ header {
 .work-section-content {
   display: flex;
   justify-content: space-between;
+}
+
+#math-etc-section {
+  background-color: var(--color-background);
+}
+
+#wrc-section {
+  background-color: var(--color-secondary);
+}
+
+#pass-section .work-section-inner {
+  margin-left: auto;
+}
+
+/* --- English PASS Center Page --- */
+.tutoring-options {
+  padding: var(--space-xl) 0;
+}
+
+.questions-section {
+  padding: var(--space-xl) 0;
 }
 
 

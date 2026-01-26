@@ -128,16 +128,12 @@
     z-index: 0;
   }
 
-  #hours-of-operation {
+  .hours-of-operation-inner {
     text-align: left;
-  }
-
-  #hours-of-operation h1 {
-    width: 50%;
+    max-width: 70%;
   }
 
   .days-and-hours {
-    width: 70%;
     grid-template-columns: 1fr 1fr;
   }
 
@@ -245,18 +241,30 @@
     grid-template-columns: 2fr 1fr 1fr;
   }
 
-  #math-circle {
+  #math-etc-circle,
+  #wrc-circle,
+  #pass-circle {
     display: inline-block;
     position: absolute;
     object-fit: cover;
-    width: clamp(600px, 70vw, 900px);
-    height: clamp(600px, 70vw, 900px);
-    top: 50%;
-    right: 0;
-    transform: translateX(30%) translateY(-50%);
+    width: clamp(600px, 50vw, 900px);
+    height: 900px;
     border-radius: 50%;
     background-color: var(--color-primary);
     z-index: 0;
+  }
+
+  #math-etc-circle,
+  #wrc-circle {
+    top: 50%;
+    right: 0;
+    transform: translateX(40%) translateY(-50%);
+  }
+
+  #pass-circle {
+    top: 50%;
+    left: 0;
+    transform: translateX(-40%) translateY(-50%);
   }
 }
 
