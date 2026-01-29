@@ -100,7 +100,8 @@ header {
   background-color: var(--color-white);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   min-width: 100%;
-  max-width: fit-content
+  max-width: fit-content;
+  z-index: 1000;
 }
 
 /*--- Landing Page ---*/
@@ -136,7 +137,7 @@ header {
   position: absolute;
   left: 0;
   top: 0;
-  width: 1.5vw;
+  width:0;
   height: 100%;
   background: maroon;
 }
@@ -178,7 +179,7 @@ header {
   position: relative;
 }
 
-#contact-hero .container {
+#contact-hero .container {  
   display: flex;
   justify-content: center;
 }
@@ -259,12 +260,16 @@ header {
 }
 
 /* --- English PASS Center Page --- */
+
 .tutoring-options {
   padding: var(--space-xl) 0;
 }
 
 .questions-section {
+  text-align: center;
   padding: var(--space-xl) 0;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 

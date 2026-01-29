@@ -21,7 +21,7 @@
 
   /* HEADINGS */
   --h1-size: clamp(1.728rem, 1.4362rem + 1.2971vw, 2.4414rem);
-  --h1-weight: 500;
+  --h1-weight: 600;
   --h1-line-height: 1.2;
   --h1-letter-spacing: -0.01em;
 

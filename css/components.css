@@ -146,7 +146,7 @@
 }
 
 .subjects-box-content {
-  padding: var(--space-lg) var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
 }
 
 .subjects-box h2 {
@@ -259,21 +259,17 @@
 }
 
 .days {
-  font-weight: var(--h1-weight);
+  font-weight: var(--h2-weight);
 }
 
 /* --- Work CTA Content --- */
 #work-cta-text {
+  text-align: center;
   width: 100%;
 }
 
-#work-cta-text h2 {
-  margin-bottom: var(--space-md);
-}
-
-#work-cta-text h3 {
+#work-cta-text h1 {
   margin-bottom: var(--space-lg);
-  font-weight: 400;
 }
 
 /* --- Subjects Components --- */
@@ -308,10 +304,6 @@
   border-radius: 9999px;
   border: 1px solid var(--color-primary);
   outline: none;
-}
-
-.line-break {
-  display: inline;
 }
 
 /* --- Subjects Menu & Boxes --- */
@@ -386,6 +378,13 @@
 .contact-email {
   text-decoration: underline;
   color: var(--color-primary);
+  font-weight: 400;
+  transition: font-weight 0.1s ease-in-out;
+}
+
+.contact-email:hover {
+  font-weight: 500;
+  cursor: pointer;
 }
 
 /* --- Computer Lab Components --- */
@@ -472,11 +471,11 @@
   gap: var(--space-sm);
 }
 
-/* --- English PASS Center Page --- */
+/* --- English PASS / WRC Center Page --- */
 .tutoring-options-inner h1:first-child {
   padding-bottom: var(--space-md);
   border-bottom: 1px solid var(--color-text);
-  margin-bottom: var(--space-md)
+  margin-bottom: var(--space-md);
 }
 
 .tutoring-options-inner h2 {
@@ -491,6 +490,46 @@
   margin-bottom: var(--space-sm);
 }
 
+.tutoring-options .container {
+  display: flex;
+  justify-content: center;
+}
+
 #tutoring-options-box {
-  width: fit-content
+  width: fit-content;
+}
+
+#pass-hours {
+  margin: 0 auto;
+  max-width: fit-content;
+}
+
+#pass-hours .closed-info {
+  text-align: center;
+}
+
+.questions-section h1 {
+  margin-bottom: var(--space-md);
+}
+
+.email-phone {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-md);
+  transition: font-weight 0.1s ease-in-out;
+}
+
+.email-title {
+  font-weight: 500;
+}
+
+.email-data {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-size: var(--h3-size);
+}
+
+.email-data:hover {
+  font-weight: 500;
+  cursor: pointer
 }
