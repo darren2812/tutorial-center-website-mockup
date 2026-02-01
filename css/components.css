@@ -232,6 +232,10 @@
   display: none;
 }
 
+.hero-title span {
+  color: var(--color-primary);
+}
+
 /* --- Hours Section Content --- */
 .hours-of-operation-inner {
   padding: var(--space-xl) 0;
@@ -270,6 +274,11 @@
 
 #work-cta-text h1 {
   margin-bottom: var(--space-lg);
+}
+
+#work-cta-text span {
+  color: var(--color-primary);
+  display: block;
 }
 
 /* --- Subjects Components --- */
@@ -387,11 +396,6 @@
   cursor: pointer;
 }
 
-/* --- Computer Lab Components --- */
-#computer-lab-hero-circle {
-  display: none;
-}
-
 /* --- Footer Components --- */
 #footer-brand h4 {
   margin-bottom: var(--space-sm);
@@ -486,10 +490,6 @@
   margin-bottom: var(--space-md);
 }
 
-.tutoring-options-inner h3:last-of-type {
-  margin-bottom: var(--space-sm);
-}
-
 .tutoring-options .container {
   display: flex;
   justify-content: center;
@@ -512,6 +512,10 @@
   margin-bottom: var(--space-md);
 }
 
+.questions-section span {
+  color: var(--color-primary);
+}
+
 .email-phone {
   display: flex;
   flex-direction: column;
@@ -532,4 +536,8 @@
 .email-data:hover {
   font-weight: 500;
   cursor: pointer
+}
+
+#services-circle {
+  display: none;
 }
