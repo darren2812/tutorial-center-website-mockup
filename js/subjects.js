@@ -16,10 +16,23 @@ fetch("../data/subjects.json")
     // determining which schedule gets displayed
     function applySection (sectionName, iframeId, containerId) {
       const section = subject?.sections?.[sectionName];
+      const locationList = document.getElementById("in-person-location");
+      const iframe = document.getElementById(iframeId);
+
       if (section) {
-        document.getElementById(iframeId).src = section.iframe;
+        iframe.src = section.iframe;
+        iframe.style.height = `${section.height}px`;
+
         if (sectionName === "drop-in") {
           document.getElementById("drop-in-location").textContent = section?.["location"];
+          const dropInLocation = document.createElement("li");
+          dropInLocation.textContent = `Drop in at ${section?.["location"]} during hours below.`;
+          locationList.appendChild(dropInLocation);
+        }
+        if (sectionName === "etc") {
+          const etcAvailability = document.createElement("li");
+          etcAvailability.textContent = "ETC Available for instructors below";
+          locationList.appendChild(etcAvailability);
         }
       }
       else {

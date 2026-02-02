@@ -3,8 +3,51 @@
         "name": "Engineering (ENGR)",
         "sections": {
             "drop-in": {
-                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQhkPaC_2hMsW0u5LPV9YHUPhu9MQ2FjsD7R-8BU_83Kj-AFB60i1FH63yK8WMIxUJXAdz7TyxlngnQ/pubhtml?gid=0&single=true&range=A1:H10&widget=false&headers=false&chrome=false",
-                "location": "LI-134"
+                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRPepJjkx0wpOJ5lo9vg8Wg7BmqF7nEi149SbPypc-4H1O8K1GvWc6RG84fWwbFYoTkG6VBZRnEnawX/pubhtml?gid=0&amp;single=true&range=A1:H9&widget=false&headers=false&chrome=false",
+                "location": "LI-134",
+                "height": 470
+            }
+        }
+    },
+
+    "grasp": {
+        "name": "GRASP",
+        "description": "GRASP is open to all enrolled students. Use the space to review models, slides, and specimens,work independently, or get help from faculty and tutors.\nCheck the schedule for a specific room.",
+        "sections": {
+            "drop-in": {
+                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQz3QPJYr9TRkX1wueAWKqJZqhhIQhhn7uXhdSXiS6BY2difQ99adCPxk5Yt0BUhzQDqIeeVjML0flz/pubhtml?gid=957710543&amp;single=true&range=A1:H7&widget=false&headers=false&chrome=false",
+                "location": "Science / New Science Building",
+                "height": 200
+            }
+        }
+    },
+
+    "bio": {
+        "name": "Biology (BIO)",
+        "sections": {
+            "drop-in": {
+                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVadXKNjrlor8wVdjYrJOVP5BnCRTa3pkihJYOsj67GHDqoNyGzlDG2xMuLBd6M7g98uo9FCTVfoQs/pubhtml?gid=2023524148&amp;single=true&range=A1:H13&widget=false&headers=false&chrome=false",
+                "location": "LI-134 / New Science Building",
+                "height": 300
+            },
+            "etc": {
+                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQRQ14A1JIYpqtkTvtmplewKddABrA3y_7N7dNvSZXqCdXcOE_rZ9jlCsbpngstEdgbJTnVi8Aww-g8/pubhtml?gid=0&amp;single=true&range=A1:H36&widget=false&headers=false&chrome=false",
+                "height": 1000
+            }
+        }
+    },
+
+    "csci": {
+        "name": "Computer Science (CSCI)",
+        "sections": {
+            "drop-in": {
+                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQMGbvwm7C9xNzmmA7LrmSfbp2Os2NNiB63SwlnXiZIlnLmaENBvRT40w8-Vf7R96cIZUcm02Fe0fDO/pubhtml?gid=0&amp;single=true&range=A1:H5&widget=false&headers=false&chrome=false",
+                "location": "LI-134",
+                "height": 120
+            },
+            "online": {
+                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-ceJg9gB8YKPHdbi1IOPuuI3lzO_D2lNNCpUW9IP898O3dcT7ubZbCSiyBg9wsygb0Xkn-fS80uhv/pubhtml?gid=0&amp;single=true&ange=A1:H4&widget=false&headers=false&chrome=false",
+                "height": 140
             }
         }
     }

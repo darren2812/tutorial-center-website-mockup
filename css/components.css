@@ -420,18 +420,22 @@
 }
 
 /*--- Individual Subjects Page ---*/
+
 .schedule iframe {
   width: 100%;
-  max-width: 1129px;
-  height: 300px;
   border: none;
   border-radius: 10px;
-  background: white;
+  background: var(--color-background);
   overflow: auto;
 }
 
-#subject-info h1 {
-  margin-bottom: var(--space-sm);
+#subject-info {
+  text-align: center;
+}
+
+#subject-disclaimer {
+  color: var(--color-primary);
+  font-weight: 500;
 }
 
 #etc-info h4 {
@@ -445,6 +449,16 @@
 }
 
 #etc-info h1 {
+  margin-bottom: var(--space-sm);
+}
+
+#etc-info h4 {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+#in-person-location li {
+  font-size: var(--h3-size);
   margin-bottom: var(--space-sm);
 }
 
@@ -476,10 +490,12 @@
 }
 
 /* --- English PASS / WRC Center Page --- */
+
 .tutoring-options-inner h1:first-child {
   padding-bottom: var(--space-md);
   border-bottom: 1px solid var(--color-text);
   margin-bottom: var(--space-md);
+  text-align: center;
 }
 
 .tutoring-options-inner h2 {
@@ -497,6 +513,14 @@
 
 #tutoring-options-box {
   width: fit-content;
+}
+
+#tutoring-options-grid {
+  text-align: left;
+}
+
+#tutoring-options-grid span {
+  display: block;
 }
 
 #pass-hours {
