@@ -429,13 +429,22 @@
   overflow: auto;
 }
 
-#subject-info {
-  text-align: center;
+#subject-info,
+#subject-disclaimer {
+  max-width: 65ch;
 }
 
 #subject-disclaimer {
   color: var(--color-primary);
   font-weight: 500;
+}
+
+#subject-disclaimer span {
+  display: inline-block;
+}
+
+#subject-description {
+  margin-top: var(--space-md);
 }
 
 #etc-info h4 {
@@ -487,6 +496,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+}
+
+#math-etc-circle,
+#pass-circle,
+#wrc-circle {
+  display: none;
 }
 
 /* --- English PASS / WRC Center Page --- */

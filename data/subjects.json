@@ -12,7 +12,7 @@
 
     "grasp": {
         "name": "GRASP",
-        "description": "GRASP is open to all enrolled students. Use the space to review models, slides, and specimens,work independently, or get help from faculty and tutors.\nCheck the schedule for a specific room.",
+        "description": "GRASP is open to all enrolled students. Use the space to review models, slides, and specimens, work independently, or get help from faculty and tutors.",
         "sections": {
             "drop-in": {
                 "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQz3QPJYr9TRkX1wueAWKqJZqhhIQhhn7uXhdSXiS6BY2difQ99adCPxk5Yt0BUhzQDqIeeVjML0flz/pubhtml?gid=957710543&amp;single=true&range=A1:H7&widget=false&headers=false&chrome=false",

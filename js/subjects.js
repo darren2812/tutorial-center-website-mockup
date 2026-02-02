@@ -12,10 +12,19 @@ fetch("../data/subjects.json")
     }
 
     document.getElementById("subject-title").textContent = subject.name;
+
+    // checks if description exists
+    const subjectDescription = subject?.description;
+    if (subjectDescription) {
+      document.getElementById("subject-description").textContent = subjectDescription;
+    }
+    else {
+      document.getElementById("subject-description").remove();
+    }
     
     // determining which schedule gets displayed
     function applySection (sectionName, iframeId, containerId) {
-      const section = subject?.sections?.[sectionName];
+      const section = subject.sections?.[sectionName];
       const locationList = document.getElementById("in-person-location");
       const iframe = document.getElementById(iframeId);
 
