@@ -216,7 +216,8 @@
 }
 
 #hero-bottom-text {
-  text-align: inherit;
+  text-align: center;
+  margin: 0 auto;
 }
 
 #hero-bottom-text h4 {
@@ -226,7 +227,7 @@
 #hero-bottom-text a {
   color: maroon;
   text-decoration: underline;
-  font-size: var(--btn-size);
+  font-size: var(--h4-size);
   border: none;
   padding: 0;
   margin-bottom: 0;

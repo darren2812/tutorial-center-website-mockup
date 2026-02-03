@@ -106,6 +106,22 @@ header {
 
 /*--- Landing Page ---*/
 
+.mobile-hero-image {
+  z-index: 0;
+  height: 25vh;
+}
+
+#landing-page-mobile-image {
+  background-image: url("/assets/images/library-picture.png");
+  background-size: cover;
+  background-position: bottom center;
+}
+
+#main-content {
+  margin-top: -50px;
+  border-radius: 50px 50px 0 0;
+}
+
 #hero {
   display: flex;
   flex-direction: column;
@@ -130,6 +146,7 @@ header {
   display: flex;
   justify-content: center;
   padding: var(--space-xl) 0;
+  background: var(--color-background);
 }
 
 #work-cta::before {

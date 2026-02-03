@@ -16,8 +16,12 @@ body {
   line-height: var(--body-line-height);
   letter-spacing: var(--body-letter-spacing);
   background: var(--color-background-gradient);
-  color: #121212;
+  color: var(--color-text);
   overflow-x: hidden;
+}
+
+#main-content {
+  background: var(--color-background-gradient);
 }
 
 h1 {
