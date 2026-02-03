@@ -92,7 +92,7 @@
 .sidebar-icons {
   display: flex;
   flex-direction: column;
-  margin: var(--space-lg) 0;
+  margin: var(--space-xl) 0;
 }
 
 .sidebar-icons button {
@@ -138,18 +138,18 @@
 
 /* -- Subjects Coomponents -- */
 
-.subjects-box {
+.rounded-box {
   width: 100%;
   border: 1px solid var(--color-tertiary);
   background-color: var(--color-white);
   border-radius: 20px;
 }
 
-.subjects-box-content {
+.rounded-box-content {
   padding: var(--space-md) var(--space-lg);
 }
 
-.subjects-box h2 {
+.rounded-box h2 {
   margin-bottom: var(--space-md);
 }
 
@@ -424,23 +424,19 @@
 .schedule iframe {
   width: 100%;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   background: var(--color-background);
   overflow: auto;
 }
 
 #subject-info,
-#subject-disclaimer {
+#subject-disclaimer h3{
   max-width: 65ch;
 }
 
-#subject-disclaimer {
+#subject-disclaimer h3 {
   color: var(--color-primary);
   font-weight: 500;
-}
-
-#subject-disclaimer span {
-  display: inline-block;
 }
 
 #subject-description {
