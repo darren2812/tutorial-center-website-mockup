@@ -25,6 +25,14 @@
   border: 1px solid var(--color-primary);
 }
 
+.primary-btn:hover {
+  background-color: #5a0000;
+}
+
+.secondary-btn:hover {
+  background-color: var(--color-secondary);
+}
+
 /* --- Navigation Components --- */
 #main-logo {
   height: 44px;
@@ -430,7 +438,7 @@
 }
 
 #subject-info,
-#subject-disclaimer h3{
+#subject-disclaimer h3 {
   max-width: 65ch;
 }
 
@@ -570,7 +578,7 @@
 
 .email-data:hover {
   font-weight: 500;
-  cursor: pointer
+  cursor: pointer;
 }
 
 #services-circle {

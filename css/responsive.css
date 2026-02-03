@@ -7,11 +7,6 @@
   #subjects-hero-content {
     width: fit-content;
   }
-
-  /* --- Apply For Work Page --- */
-  .work-section-inner {
-    max-width: 50ch;
-  }
 }
 
 @media (min-width: 768px) {
@@ -33,16 +28,61 @@
     display: none;
   }
 
-  .work-section-buttons {
-    flex-direction: row;
-  }
-
   .rounded-box-content {
     padding: var(--space-lg) var(--space-xl);
   }
 
   .tutoring-options .container {
     justify-content: flex-start;
+  }
+
+  #math-etc-circle,
+  #wrc-circle,
+  #pass-circle {
+    display: inline-block;
+    position: absolute;
+    width: clamp(300px, 50vw, 900px);
+    height: 900px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  #math-etc-circle,
+  #wrc-circle {
+    top: 50%;
+    right: 0;
+    transform: translateX(30%) translateY(-50%);
+  }
+
+  #pass-circle {
+    top: 50%;
+    left: 0;
+    transform: translateX(-30%) translateY(-50%);
+  }
+
+  #math-etc-circle img,
+  #pass-circle img,
+  #wrc-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(0.8);
+  }
+
+  #math-etc-circle img,
+  #wrc-circle img {
+    transform-origin: left;
+  }
+
+  #pass-circle img {
+    transform-origin: right;
+  }
+
+  .work-section-inner {
+    max-width: 40ch;
   }
 }
 
@@ -84,14 +124,6 @@
   #nav-dropdown-content a:hover {
     color: maroon;
     font-weight: 500;
-  }
-
-  .primary-btn:hover {
-    background-color: #5a0000;
-  }
-
-  .secondary-btn:hover {
-    background-color: var(--color-secondary);
   }
 
   .upper-buttons {
@@ -246,42 +278,15 @@
   #math-etc-circle,
   #wrc-circle,
   #pass-circle {
-    display: inline-block;
-    position: absolute;
-    width: clamp(600px, 60vw, 900px);
-    height: 900px;
-    border-radius: 50%;
-    background-color: var(--color-primary);
-    z-index: 0;
-    overflow: hidden;
+    width: clamp(300px, 60vw, 900px);
   }
 
-  #math-etc-circle,
-  #wrc-circle {
-    top: 50%;
-    right: 0;
-    transform: translateX(30%) translateY(-50%);
+  .work-section-inner {
+    max-width: 50ch;
   }
 
-  #pass-circle {
-    top: 50%;
-    left: 0;
-    transform: translateX(-30%) translateY(-50%);
-  }
-
-  #math-etc-circle img,
-  #pass-circle img,
-  #wrc-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transform: scale(0.8);
-  }
-
-  #math-etc-circle img,
-  #wrc-circle img {
-    transform-origin: left;
+  .work-section-buttons {
+    flex-direction: row;
   }
 
   #pass-circle img {
