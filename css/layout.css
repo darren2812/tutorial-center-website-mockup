@@ -104,7 +104,7 @@ header {
   z-index: 1000;
 }
 
-/*--- Landing Page ---*/
+/*--- Mobile Page Images ---*/
 
 .mobile-hero-image {
   z-index: 0;
@@ -117,10 +117,25 @@ header {
   background-position: bottom center;
 }
 
-#main-content {
-  margin-top: -50px;
-  border-radius: 50px 50px 0 0;
+#wrc-page-mobile-image {
+  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-size: cover;
+  background-position: center;
 }
+
+#pass-page-mobile-image {
+  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#computer-lab-page-mobile-image {
+  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/*--- Landing Page ---*/
 
 #hero {
   display: flex;
@@ -313,14 +328,22 @@ header {
   padding: var(--space-xl) 0;
 }
 
+#wrc-pass-tutoring-options {
+  padding: 0 0 var(--space-xl) 0;
+}
+
 .questions-section {
+  background-color: var(--color-background);
+}
+
+.questions-section-inner {
   text-align: center;
   padding: var(--space-xl) 0;
   margin: 0 auto;
   width: fit-content;
 }
 
-.questions-section span {
+.questions-section-inner span {
   display: block;
 }
 

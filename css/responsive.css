@@ -94,7 +94,7 @@
 
 @media (min-width: 1024px) {
 
-  #main-content {
+  .slide-up-card {
     margin-top: 0;
     border-radius: 0;
   }
@@ -315,7 +315,7 @@
     right: 0;
     width: clamp(700px, 60vw, 1000px);
     height: clamp(700px, 60vw, 1000px);
-    transform: translate(40%, 50%);
+    transform: translate(40%, 40%);
     border-radius: 50%;
     background-color: var(--color-primary);
     z-index: 0;
@@ -338,7 +338,7 @@
     color: var(--color-text);
   }
 
-  .questions-section span {
+  .questions-section-inner span {
     display: inline;
     color: var(--color-text);
   }

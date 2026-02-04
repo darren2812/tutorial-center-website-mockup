@@ -20,9 +20,12 @@ body {
   overflow-x: hidden;
 }
 
-#main-content {
-  background: var(--color-background-gradient);
+#main-content,
+.slide-up-card {
+  background: inherit;
 }
+
+
 
 h1 {
   font-size: var(--h1-size);
