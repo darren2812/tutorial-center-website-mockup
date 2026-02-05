@@ -309,10 +309,6 @@
     transform-origin: right;
   }
 
-  #work-hero-inner span {
-    color: var(--color-text);
-  }
-
   .work-section {
     padding: var(--space-xxl) 0;
     overflow: hidden;

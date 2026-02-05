@@ -536,10 +536,6 @@
   margin-bottom: var(--space-md);
 }
 
-#work-hero-inner span {
-  color: var(--color-primary);
-}
-
 .work-section-inner h1 {
   margin-bottom: var(--space-lg);
 }
