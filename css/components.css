@@ -190,9 +190,53 @@
   border-bottom: none;
 }
 
+/*--- Mobile Page Images ---*/
+
+.mobile-hero-image {
+  z-index: 0;
+  margin-top: -20px;
+  height: clamp(180px, 50vw, 320px);
+}
+
+#landing-page-mobile-image {
+  background-image: url("/assets/images/library-picture.png");
+  background-size: cover;
+  background-position: bottom center;
+}
+
+#wrc-page-mobile-image {
+  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#pass-page-mobile-image {
+  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#computer-lab-page-mobile-image {
+  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#math-etc-mobile-image {
+  background-image: url("/assets/images/work-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.mobile-work-image {
+  z-index: 0;
+  margin-top: -40px;
+  height: clamp(180px, 100vw, 480px);
+}
+
 /* --- Hero Section Content --- */
 
-.slide-up-card {
+.slide-up-top-rounded-card {
   margin-top: -50px;
   border-radius: 40px 40px 0 0;
 }
@@ -482,8 +526,18 @@
 }
 
 /* --- Apply For Work Page ---*/
+
+.bottom-rounded-card {
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
 #work-hero h1 {
   margin-bottom: var(--space-md);
+}
+
+#work-hero-inner span {
+  color: var(--color-primary);
 }
 
 .work-section-inner h1 {

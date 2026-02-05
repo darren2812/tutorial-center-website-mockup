@@ -5,7 +5,7 @@
   padding: 0 var(--space-lg);
 }
 
-header {
+#navbar {
   background-color: var(--color-white);
   position: sticky;
   top: 0;
@@ -14,10 +14,10 @@ header {
   height: auto;
   padding: var(--space-sm) 0;
   margin: 0;
-  width: 100%;
+  border-radius: 0 0 20px 20px;
 }
 
-#navbar {
+#navbar-inner {
   display: flex;
   align-items: center;
   font-size: var(--btn-size);
@@ -104,37 +104,6 @@ header {
   z-index: 1000;
 }
 
-/*--- Mobile Page Images ---*/
-
-.mobile-hero-image {
-  z-index: 0;
-  height: 25vh;
-}
-
-#landing-page-mobile-image {
-  background-image: url("/assets/images/library-picture.png");
-  background-size: cover;
-  background-position: bottom center;
-}
-
-#wrc-page-mobile-image {
-  background-image: url("/assets/images/computer-lab-image.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-#pass-page-mobile-image {
-  background-image: url("/assets/images/computer-lab-image.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-#computer-lab-page-mobile-image {
-  background-image: url("/assets/images/computer-lab-image.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
 /*--- Landing Page ---*/
 
 #hero {
@@ -153,7 +122,7 @@ header {
 }
 
 .hours-of-operation {
-  background-color: #ededed;
+  background-color: var(--color-secondary);
 }
 
 #work-cta {
@@ -217,8 +186,8 @@ header {
 }
 
 #contact-hero-content {
-  padding-top: var(--space-xl);
-  padding-bottom: var(--space-lg);
+  text-align: center;
+  padding: var(--space-xl) 0;
   max-width: 720px;
 }
 
@@ -289,6 +258,12 @@ header {
 
 /*--- Apply For Work Page ---*/
 
+#work-hero {
+  position: relative;
+  z-index: 100;
+  background: inherit;
+}
+
 #work-hero .container {
   display: flex;
   justify-content: center;
@@ -300,9 +275,9 @@ header {
 }
 
 .work-section {
-  padding: calc(2 * var(--space-xl)) 0;
   position: relative;
-  overflow: hidden;
+  padding: var(--space-xl) 0;
+  border-radius: inherit;
 }
 
 .work-section-content {
@@ -311,11 +286,15 @@ header {
 }
 
 #math-etc-section {
-  background-color: var(--color-background);
+  background: var(--color-secondary);
+}
+
+#pass-section {
+  background: #f2f2f2;
 }
 
 #wrc-section {
-  background-color: var(--color-secondary);
+  background: var(--color-background);
 }
 
 #pass-section .work-section-inner {
