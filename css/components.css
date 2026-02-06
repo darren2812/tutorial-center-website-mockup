@@ -199,31 +199,31 @@
 }
 
 #landing-page-mobile-image {
-  background-image: url("/assets/images/library-picture.png");
+  background-image: url("/assets/images/public/computer-lab-image.jpg");
   background-size: cover;
   background-position: bottom center;
 }
 
 #wrc-page-mobile-image {
-  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-image: url("/assets/images/public/computer-lab-image.jpg");
   background-size: cover;
   background-position: center;
 }
 
 #pass-page-mobile-image {
-  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-image: url("/assets/images/public/computer-lab-image.jpg");
   background-size: cover;
   background-position: center;
 }
 
 #computer-lab-page-mobile-image {
-  background-image: url("/assets/images/computer-lab-image.jpg");
+  background-image: url("/assets/images/public/computer-lab-image.jpg");
   background-size: cover;
   background-position: center;
 }
 
 #math-etc-mobile-image {
-  background-image: url("/assets/images/work-image.jpg");
+  background-image: url("/assets/images/public/work-image.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -639,4 +639,20 @@
 
 #services-circle {
   display: none;
+}
+
+/* -- WIP Page -- */
+
+#wip-content h1{
+  margin-bottom: var(--space-md);
+}
+
+#wip-content ul {
+  font-size: var(--h3-size);
+  margin-bottom: var(--space-lg);
+}
+
+#wip-content span {
+  color: var(--color-primary);
+  font-weight: 500;
 }

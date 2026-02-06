@@ -1,4 +1,3 @@
-assets/images/
+assets/images/private
+assets/images/contacts
 .DS_Store
-js/partials.js
-partials/

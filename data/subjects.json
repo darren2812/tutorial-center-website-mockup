@@ -43,11 +43,11 @@
             "drop-in": {
                 "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQMGbvwm7C9xNzmmA7LrmSfbp2Os2NNiB63SwlnXiZIlnLmaENBvRT40w8-Vf7R96cIZUcm02Fe0fDO/pubhtml?gid=0&amp;single=true&range=A1:H5&widget=false&headers=false&chrome=false",
                 "location": "LI-134",
-                "height": 120
+                "height": 140
             },
             "online": {
                 "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-ceJg9gB8YKPHdbi1IOPuuI3lzO_D2lNNCpUW9IP898O3dcT7ubZbCSiyBg9wsygb0Xkn-fS80uhv/pubhtml?gid=0&amp;single=true&ange=A1:H4&widget=false&headers=false&chrome=false",
-                "height": 140
+                "height": 150
             }
         }
     }
