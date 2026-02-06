@@ -4,7 +4,6 @@
   padding: 0.75em 1.5em;
   text-decoration: none;
   border-radius: 9999px;
-  font-size: var(--btn-size);
   font-weight: var(--btn-weight);
   line-height: var(--btn-line-height);
   letter-spacing: var(--btn-letter-spacing);
@@ -35,8 +34,8 @@
 
 /* --- Navigation Components --- */
 #main-logo {
-  height: 44px;
-  width: 44px;
+  height: 36px;
+  width: 36px;
   margin: 0;
 }
 
@@ -46,17 +45,22 @@
 }
 
 /* --- Sidebar Components --- */
-#sidebar-btn {
+#sidebar-btn-wrapper {
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+}
+
+#sidebar-btn-lines {
+  padding: 0.4rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 44px;
-  width: 44px;
-  margin-left: auto;
-  background-color: transparent;
-  padding: 0.4rem 0;
-  border: none;
+  height: 36px;
+  width: 36px;
 }
 
 .line {
@@ -70,7 +74,7 @@
   width: 44px;
   height: 44px;
   position: absolute;
-  top: var(--space-md);
+  top: var(--space-sm);
   right: var(--space-lg);
   background: transparent;
   border: none;
@@ -84,7 +88,7 @@
   top: 50%;
   left: 50%;
   width: 3px;
-  height: 44px;
+  height: 36px;
   background-color: var(--color-primary);
   border-radius: 9999px;
 }
@@ -100,7 +104,7 @@
 .sidebar-icons {
   display: flex;
   flex-direction: column;
-  margin: var(--space-xl) 0;
+  margin: var(--space-lg) 0;
 }
 
 .sidebar-icons button {
@@ -118,7 +122,6 @@
   border-bottom: 1px solid var(--color-tertiary);
   color: var(--color-primary);
   font-weight: 500;
-  font-size: var(--btn-size);
   width: 100%;
   padding: var(--space-xs) 0;
 }
@@ -364,7 +367,6 @@
 }
 
 #subject-search {
-  font-size: var(--btn-size);
   font-weight: var(--btn-weight);
   padding: 0.6em 1.5em;
   text-decoration: none;
@@ -385,7 +387,6 @@
 
 .subjects-content a {
   text-decoration: none;
-  font-size: var(--btn-size);
   font-weight: 500;
   color: var(--color-primary);
   border-bottom: 1px solid var(--color-secondary);

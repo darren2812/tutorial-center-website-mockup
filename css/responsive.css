@@ -43,7 +43,13 @@
 }
 
 @media (min-width: 1024px) {
+
+  a, button, nav, input {
+    font-size: var(--desktop-btn-size);
+  }
+
   #navbar {
+    padding: var(--space-sm) 0;
     border-radius: 0;
   }
 
@@ -100,7 +106,7 @@
     margin-left: auto;
   }
 
-  #sidebar-btn {
+  #sidebar-btn-wrapper {
     display: none;
   }
 

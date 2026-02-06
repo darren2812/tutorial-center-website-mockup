@@ -1,4 +1,4 @@
-const sidebarBtn = document.getElementById("sidebar-btn");
+const sidebarBtn = document.getElementById("sidebar-btn-wrapper");
 const sidebar = document.getElementById("sidebar");
 const sidebarExit = document.getElementById("sidebar-exit-btn");
 const navDropdownBtn = document.getElementById("nav-dropdown-btn");
