@@ -526,6 +526,16 @@
   margin-bottom: var(--space-sm);
 }
 
+.schedule-filter {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+}
+
 /* --- Apply For Work Page ---*/
 
 .bottom-rounded-card {

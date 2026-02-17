@@ -21,14 +21,68 @@ fetch("../data/subjects.json")
     else {
       document.getElementById("subject-description").remove();
     }
-    
+
+    function createRow(entry) {
+      const tableRow = document.createElement("tr");
+      tableRow.innerHTML = `
+      <td>${entry.Course.toUpperCase()}</td>
+      <td>${entry.Instructor}</td>
+      <td>${entry.Sunday}</td>
+      <td>${entry.Monday}</td>
+      <td>${entry.Tuesday}</td>
+      <td>${entry.Wednesday}</td>
+      <td>${entry.Thursday}</td>
+      <td>${entry.Friday}</td>
+      <td>${entry.Saturday}</td>
+  `   ;
+      console.log("Row created");
+      return tableRow;
+    }
+
+    function renderTable(data) {
+      const tableBody = document.getElementById("table-contents");
+      tableBody.innerHTML = "";
+
+      data.forEach(element => {
+        tableBody.appendChild(createRow(element));
+      });
+
+      console.log("Table rendered");
+    }
+
+    function populateFilter(dataToFilter, filterId) {
+      const allData = dataToFilter.map((dataEntry) => dataEntry.Course);
+      const uniqueData = [...new Set(allData)];
+      const filterList = document.getElementById(filterId);
+
+      uniqueData.forEach((uniqueEntry) => {
+        filterList.add(new Option(uniqueEntry, uniqueEntry.toLowerCase()));
+      });
+
+      console.log(filterList);
+    }
+
     // determining which schedule gets displayed
-    function applySection (sectionName, iframeId, containerId) {
+    function applySection(sectionName, iframeId, containerId) {
       const section = subject.sections?.[sectionName];
       const locationList = document.getElementById("in-person-location");
       const iframe = document.getElementById(iframeId);
 
       if (section) {
+        const sectionCsv = section.iframe;
+
+        // parsing file using Papa Parse
+        Papa.parse(sectionCsv, {
+          download: true,
+          header: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            renderTable(results.data);
+            console.log(results);
+            populateFilter(results.data, "course-filter");
+          }
+        });
+
         iframe.src = section.iframe;
         iframe.style.height = `${section.height}px`;
 
@@ -48,9 +102,9 @@ fetch("../data/subjects.json")
         document.getElementById(containerId).remove();
       }
     }
-    
-    applySection("drop-in", "drop-in-iframe", "drop-in-info");
+
+    // applySection("drop-in", "drop-in-iframe", "drop-in-info");
     applySection("etc", "etc-iframe", "etc-info");
-    applySection("online", "online-iframe", "online-info");
+    // applySection("online", "online-iframe", "online-info");
 
   });

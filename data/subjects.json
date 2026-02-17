@@ -31,7 +31,7 @@
                 "height": 300
             },
             "etc": {
-                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQRQ14A1JIYpqtkTvtmplewKddABrA3y_7N7dNvSZXqCdXcOE_rZ9jlCsbpngstEdgbJTnVi8Aww-g8/pubhtml?gid=0&amp;single=true&range=A1:H36&widget=false&headers=false&chrome=false",
+                "iframe": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxBRk3XeJ6u5wM_lHdfppc7gGq3XnKiWmxMVSL62Ic_IHbofQ6iJaY9LgNjRpYSMCSZNBokWzaIYPl/pub?gid=0&single=true&output=csv",
                 "height": 1000
             }
         }

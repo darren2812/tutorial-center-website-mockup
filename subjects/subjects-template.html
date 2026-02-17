@@ -3,10 +3,13 @@
 <head>
   <!-- Viewport Settings for Mobile Scaling -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!--Loading Scripts-->
   <script src="/js/partials.js" defer></script>
   <script src="/js/navigation.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.js"
+    integrity="sha512-M0cjXJTonbWEdLI3HJIoJSQBb9980RWmOCk+tvWkhgFrAZqSSIg1+1Db/vDu7Qk9W3L90gBynve17PYvarjfQA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="/js/subjects.js" defer></script>
 
   <!--Importing Roboto font-->
@@ -39,20 +42,31 @@
           <h1 id="subject-title" class="display-lg"></h1>
           <h3 id="subject-description"></h3>
         </div>
-        <div class="tutoring-options">
-          <div id="tutoring-options-box" class="rounded-box">
-            <div class="rounded-box-content tutoring-options-inner">
-              <h1>Tutoring Options</h1>
-              <div id="tutoring-options-grid">
-                <div class="tutoring-option-column">
-                  <h2>In-Person</h2>
-                  <ul id="in-person-location"></ul>
-                </div>
-                <div class="tutoring-option-column">
-                  <h2>Online</h2>
-                  <h3>Meet with a tutor on Zoom</h3>
-                  <a href="../wip.html" id="online-tutoring-link" class="btn primary-btn">Join Online Tutoring</a>
-                </div>
+        <div class="rounded-box" id="subjects-box">
+          <div class="rounded-box-content">
+            <h2>Filter Schedule</h2>
+            <div class="schedule-filter">
+              <div class="filter-section">
+                <label for="course-filter">By Course</label>
+                <select id="course-filter" name="course">
+                  <option value="">None</option>
+                </select>
+              </div>
+              <div class="filter-section">
+                <label for="type-filter">By Type</label>
+                <select id="type-filter" name="type">
+                  <option value="">None</option>
+                  <option value="drop-in">Drop In Tutoring</option>
+                  <option value="etc">Extending the Class</option>
+                </select>
+              </div>
+              <div class="filter-section">
+                <label for="instructor-filter">By Instructor</label>
+                <select id="instructor-filter" name="instructor">
+                  <option value="">None</option>
+                  <option value="egg">Dr. Eggman</option>
+                  <option value="teacher">Professor</option>
+                </select>
               </div>
             </div>
           </div>
@@ -81,8 +95,23 @@
         <h1>ETC Tutoring</h1>
         <div class="schedule-container">
           <section class="schedule">
-            <iframe id="etc-iframe" loading="lazy">
-            </iframe>
+            <table>
+              <thead>
+                <tr id="table-headings">
+                  <th scope="col">Course</th>
+                  <th scope="col">Instructor</th>
+                  <th scope="col">Sunday</th>
+                  <th scope="col">Monday</th>
+                  <th scope="col">Tuesday</th>
+                  <th scope="col">Wednesday</th>
+                  <th scope="col">Thursday</th>
+                  <th scope="col">Friday</th>
+                  <th scope="col">Saturday</th>
+                </tr>
+              </thead>
+              <tbody id="table-contents">
+              </tbody>
+            </table>
           </section>
         </div>
       </div>
