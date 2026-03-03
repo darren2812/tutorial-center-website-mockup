@@ -29,7 +29,9 @@ The current version presents challenges in distinguishing between the different 
 ![Desktop Home](./screenshots/home_desktop.png)
 
 ### Mobile Home
-![Mobile Home](./screenshots/home_mobile.jpg)
+<p align="center">
+  <img src="./screenshots/home_mobile.jpg" width="250">
+</p>
 
 ### Subjects Page Desktop
 ![Subjects Page Desktop](./screenshots/subjects_desktop.png)
