@@ -1,61 +1,85 @@
-const params = new URLSearchParams(window.location.search);
-const subjectId = params.get("id");
+async function loadSubject() {
+  const params = new URLSearchParams(window.location.search);
+  const subjectId = params.get("id");
+  const res = await fetch("https://script.google.com/macros/s/AKfycby2TLCtNSapumt7K_7kiJp0TUDyQh6s1v4ovZ1b46H8Tu6amAlVBYuckkAe43anlfu16g/exec?subject=${subjectId}");
+  const subjects = await res.json();
+  return subjects;
+}
 
-fetch("../data/subjects.json")
+function createRow(entry) {
+  const tableRow = document.createElement("tr");
+  tableRow.innerHTML = `
+  <td>${entry.Course.toUpperCase()}</td>
+  <td>${entry.Instructor}</td>
+  <td>${entry.Sunday}</td>
+  <td>${entry.Monday}</td>
+  <td>${entry.Tuesday}</td>
+  <td>${entry.Wednesday}</td>
+  <td>${entry.Thursday}</td>
+  <td>${entry.Friday}</td>
+  <td>${entry.Saturday}</td>
+`   ;
+  return tableRow;
+}
+
+function renderTable(data) {
+  const tableBody = document.getElementById("table-contents");
+  tableBody.innerHTML = "";
+
+  data.forEach(element => {
+    tableBody.appendChild(createRow(element));
+  });
+}
+
+function populateFilters(data) {
+  const uniqueCourses = new Set();
+  const uniqueInstructors = new Set();
+  const courseFilter = document.getElementById("course-filter");
+  const instructorFilter = document.getElementById("instructor-filter");
+
+  data.forEach((dataEntry) => {
+    uniqueCourses.add(dataEntry.Course);
+    if (dataEntry.Instructor) {
+      uniqueInstructors.add(dataEntry.Instructor);
+    }
+  });
+
+  uniqueCourses.forEach((uniqueEntry) => {
+    courseFilter.add(new Option(uniqueEntry, uniqueEntry.toLowerCase()));
+  });
+
+  uniqueInstructors.forEach((uniqueEntry) => {
+    instructorFilter.add(new Option(uniqueEntry, uniqueEntry.toLowerCase()));
+  });
+}
+
+
+loadSubject().then(subjects => {
+  renderTable(subjects);
+  populateFilters(subjects);
+});
+
+/*
+fetch("https://script.google.com/macros/s/AKfycbyGjEIH9y0M7NNRb1mlWXtGNU8zFF-k1OX9z08DQFnX7kN5u-YHvMHOLG6untMkN8qppw/exec?subject=${subjectId}")
   .then(res => res.json())
   .then(subjects => {
+
     const subject = subjects[subjectId];
 
-    if (!subject) {
-      document.body.innerHTML = "<h1>Subject not found</h1>";
-      return;
-    }
-
-    document.getElementById("subject-title").textContent = subject.name;
-
-    // checks if description exists
-    const subjectDescription = subject?.description;
-    if (subjectDescription) {
-      document.getElementById("subject-description").textContent = subjectDescription;
-    }
-    else {
-      document.getElementById("subject-description").remove();
-    }
-
-    function createRow(entry) {
-      const tableRow = document.createElement("tr");
-      tableRow.innerHTML = `
-      <td>${entry.Course.toUpperCase()}</td>
-      <td>${entry.Instructor}</td>
-      <td>${entry.Sunday}</td>
-      <td>${entry.Monday}</td>
-      <td>${entry.Tuesday}</td>
-      <td>${entry.Wednesday}</td>
-      <td>${entry.Thursday}</td>
-      <td>${entry.Friday}</td>
-      <td>${entry.Saturday}</td>
-  `   ;
-      console.log("Row created");
-      return tableRow;
-    }
-
-    function renderTable(data) {
-      const tableBody = document.getElementById("table-contents");
-      tableBody.innerHTML = "";
-
-      data.forEach(element => {
-        tableBody.appendChild(createRow(element));
-      });
-
-      console.log("Table rendered");
-    }
+    
 
     function populateFilter(dataToFilter, filterId) {
-      const allData = dataToFilter.map((dataEntry) => dataEntry.Course);
-      const uniqueData = [...new Set(allData)];
+      const uniqueCourses = new Set();
+      const uniqueInstructors = new Set();
+      const allCourses = dataToFilter.map((dataEntry) => dataEntry.Course);
+      const allInstructors = dataToFilter.map((dataEntry) => dataEntry.Instructor);
+
+      allCourses.forEach((course) => uniqueCourses.add(course));
+      allInstructors.forEach((instructor) => uniqueInstructors.add(instructor));
+      
       const filterList = document.getElementById(filterId);
 
-      uniqueData.forEach((uniqueEntry) => {
+      uniqueCourses.forEach((uniqueEntry) => {
         filterList.add(new Option(uniqueEntry, uniqueEntry.toLowerCase()));
       });
 
@@ -103,8 +127,25 @@ fetch("../data/subjects.json")
       }
     }
 
+    if (!subject) {
+      document.body.innerHTML = "<h1>Subject not found</h1>";
+      return;
+    }
+
+    document.getElementById("subject-title").textContent = subject.name;
+
+    // checks if description exists
+    const subjectDescription = subject?.description;
+    if (subjectDescription) {
+      document.getElementById("subject-description").textContent = subjectDescription;
+    }
+    else {
+      document.getElementById("subject-description").remove();
+    }
+
     // applySection("drop-in", "drop-in-iframe", "drop-in-info");
     applySection("etc", "etc-iframe", "etc-info");
     // applySection("online", "online-iframe", "online-info");
 
   });
+  */
