@@ -49,21 +49,19 @@
               <div class="filter-section">
                 <label for="course-filter">By Course</label>
                 <select id="course-filter" name="course">
-                  <option value="">None</option>
+                  <option value="">-</option>
                 </select>
               </div>
               <div class="filter-section">
                 <label for="type-filter">By Type</label>
                 <select id="type-filter" name="type">
-                  <option value="">None</option>
-                  <option value="drop-in">Drop In Tutoring</option>
-                  <option value="etc">Extending the Class</option>
+                  <option value="">-</option>
                 </select>
               </div>
               <div class="filter-section">
                 <label for="instructor-filter">By Instructor</label>
                 <select id="instructor-filter" name="instructor">
-                  <option value="">None</option>
+                  <option value="">-</option>
                 </select>
               </div>
             </div>
@@ -80,12 +78,18 @@
       </div>
     </div>
     <div class="container" id="subject-sections">
-      <div id="drop-in-info">
-        <h1>Drop in tutoring at <span id="drop-in-location"></span></h1>
+      <div id="dropin-info">
+        <h1>Drop in tutoring at <span id="dropin-location"></span></h1>
         <div class="schedule-container">
           <section class="schedule">
-            <iframe id="drop-in-iframe" loading="lazy">
-            </iframe>
+            <table>
+              <thead>
+                <tr id="dropin-table-headings">
+                </tr>
+              </thead>
+              <tbody id="dropin-table-contents">
+              </tbody>
+            </table>
           </section>
         </div>
       </div>
@@ -95,19 +99,10 @@
           <section class="schedule">
             <table>
               <thead>
-                <tr id="table-headings">
-                  <th scope="col">Course</th>
-                  <th scope="col">Instructor</th>
-                  <th scope="col">Sunday</th>
-                  <th scope="col">Monday</th>
-                  <th scope="col">Tuesday</th>
-                  <th scope="col">Wednesday</th>
-                  <th scope="col">Thursday</th>
-                  <th scope="col">Friday</th>
-                  <th scope="col">Saturday</th>
+                <tr id="etc-table-headings">
                 </tr>
               </thead>
-              <tbody id="table-contents">
+              <tbody id="etc-table-contents">
               </tbody>
             </table>
           </section>
@@ -117,8 +112,14 @@
         <h1>Online Tutoring</h1>
         <div class="schedule-container">
           <section class="schedule">
-            <iframe id="online-iframe" loading="lazy">
-            </iframe>
+            <table>
+              <thead>
+                <tr id="online-table-headings">
+                </tr>
+              </thead>
+              <tbody id="online-table-contents">
+              </tbody>
+            </table>
           </section>
         </div>
       </div>
