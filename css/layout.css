@@ -236,17 +236,6 @@
   text-align: center;
 }
 
-#subject-disclaimer {
-  text-align: center;
-  padding: var(--space-lg) 0;
-  background: var(--color-background);
-}
-
-#subject-disclaimer .container {
-  display: flex;
-  justify-content: center;
-}
-
 #subject-sections {
   padding-top: var(--space-xl);
   padding-bottom: var(--space-xl);

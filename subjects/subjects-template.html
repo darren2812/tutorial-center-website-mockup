@@ -42,86 +42,14 @@
           <h1 id="subject-title" class="display-lg"></h1>
           <h3 id="subject-description"></h3>
         </div>
-        <div class="rounded-box" id="subjects-box">
-          <div class="rounded-box-content">
-            <h2>Filter Schedule</h2>
-            <div class="schedule-filter">
-              <div class="filter-section">
-                <label for="course-filter">By Course</label>
-                <select id="course-filter" name="course">
-                  <option value="">-</option>
-                </select>
-              </div>
-              <div class="filter-section">
-                <label for="type-filter">By Type</label>
-                <select id="type-filter" name="type">
-                  <option value="">-</option>
-                </select>
-              </div>
-              <div class="filter-section">
-                <label for="instructor-filter">By Instructor</label>
-                <select id="instructor-filter" name="instructor">
-                  <option value="">-</option>
-                </select>
-              </div>
-            </div>
-          </div>
+        <div id="subject-disclaimer">
+          <h3>
+            Schedules may change due to tutor absences or unforeseen circumstances.
+            Please double-check room assignments and in-person/online availability.
+          </h3>
         </div>
       </div>
-    </div>
-    <div id="subject-disclaimer">
-      <div class="container">
-        <h3>
-          Schedules may change due to tutor absences or unforeseen circumstances.
-          Please double-check room assignments and in-person/online availability.
-        </h3>
-      </div>
-    </div>
-    <div class="container" id="subject-sections">
-      <div id="dropin-info">
-        <h1>Drop in tutoring at <span id="dropin-location"></span></h1>
-        <div class="schedule-container">
-          <section class="schedule">
-            <table>
-              <thead>
-                <tr id="dropin-table-headings">
-                </tr>
-              </thead>
-              <tbody id="dropin-table-contents">
-              </tbody>
-            </table>
-          </section>
-        </div>
-      </div>
-      <div id="etc-info">
-        <h1>ETC Tutoring</h1>
-        <div class="schedule-container">
-          <section class="schedule">
-            <table>
-              <thead>
-                <tr id="etc-table-headings">
-                </tr>
-              </thead>
-              <tbody id="etc-table-contents">
-              </tbody>
-            </table>
-          </section>
-        </div>
-      </div>
-      <div id="online-info">
-        <h1>Online Tutoring</h1>
-        <div class="schedule-container">
-          <section class="schedule">
-            <table>
-              <thead>
-                <tr id="online-table-headings">
-                </tr>
-              </thead>
-              <tbody id="online-table-contents">
-              </tbody>
-            </table>
-          </section>
-        </div>
+      <div id="accordion-wrapper">
       </div>
     </div>
   </main>

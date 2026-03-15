@@ -1,197 +1,87 @@
 async function loadSubject() {
   const params = new URLSearchParams(window.location.search);
   const subjectId = params.get("id");
-  const res = await fetch(`https://script.google.com/macros/s/AKfycby2TLCtNSapumt7K_7kiJp0TUDyQh6s1v4ovZ1b46H8Tu6amAlVBYuckkAe43anlfu16g/exec?subject=${subjectId}`);
+  const res = await fetch(`https://script.google.com/macros/s/AKfycbyDaKg2zFOqjKZ5DzB4UjLBj4eMNNEB596uhBckDIzCJDG3dJTqDj6DHvBcZIBb2z6kLg/exec?subject=${subjectId}`);
   const subjects = await res.json();
   return subjects;
 }
 
-function createRow(entry) {
-  const tableRow = document.createElement("tr");
-  Object.entries(entry).forEach(([key, value]) => {
-    if (key != "Saturday") {
-      const tableData = document.createElement("td");
-      tableData.textContent = value;
-      tableRow.append(tableData);
-    }
-  });
-  return tableRow;
+function formatSectionName(sectionName) {
+  if (sectionName === "dropin") return "Drop-in";
+  if (sectionName === "etc") return "ETC";
+  if (sectionName === "online") return "Online";
+  return sectionName;
 }
 
-// have to change this function because now we have multiple sections instead of just one schedule
-function renderTable(data, section) {
-  if (!data) {
-    document.getElementById(`${section}-info`).remove();
-    return;
-  }
-
-  const TABLE_CONFIG = {
-    dropin: ["Course", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",],
-    etc: ["Course", "Instructor", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    online: ["Course", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-  };
-
-  // creating headings
-  const tableHeading = document.getElementById(`${section}-table-headings`);
-  tableHeading.innerHTML = "";
-  TABLE_CONFIG[section].forEach(heading => {
-    const th = document.createElement("th");
-    th.scope = "col";
-    th.textContent = heading;
-    tableHeading.appendChild(th);
-  });
-
-  // creating table body
-  const tableBody = document.getElementById(`${section}-table-contents`);
-  tableBody.innerHTML = "";
-  data.forEach(element => {
-    console.log(element);
-    tableBody.appendChild(createRow(element));
-  });
+function createAccordion(course) {
+  const accordionWrapper = document.getElementById("accordion-wrapper");
+  const accordionHeader = createAccordionHeader(course.course);
+  const accordionSection = createAccordionSection(course.sections);
+  accordionWrapper.appendChild(accordionHeader);
+  accordionWrapper.appendChild(accordionSection);
 }
 
-function populateFilters(data) {
-  const uniqueCourses = new Set();
-  const uniqueInstructors = new Set();
-  const courseFilter = document.getElementById("course-filter");
-  const instructorFilter = document.getElementById("instructor-filter");
-  const typeFilter = document.getElementById("type-filter");
-
-  Object.values(data).forEach((section) => {
-    Object.values(section).forEach(dataEntry => {
-      uniqueCourses.add(dataEntry.Course);
-      if (dataEntry.Instructor) {
-        uniqueInstructors.add(dataEntry.Instructor);
-      }
-    });
-  });
-
-  const sortedCourses = [...uniqueCourses].sort((a, b) => a.localeCompare(b));
-  const sortedInstructors = [...uniqueInstructors].sort((a, b) => a.localeCompare(b));
-
-  sortedCourses.forEach((uniqueEntry) => {
-    courseFilter.add(new Option(uniqueEntry, uniqueEntry.toLowerCase()));
-  });
-
-  sortedInstructors.forEach((uniqueEntry) => {
-    instructorFilter.add(new Option(uniqueEntry, uniqueEntry.toLowerCase()));
-  });
-
-  const TYPE_LABELS = {
-    dropin: "Drop-in Tutoring",
-    etc: "Extending the Class (ETC)",
-    online: "Online Tutoring"
-  };
-
-  Object.keys(data).forEach(type => {
-    const label = TYPE_LABELS[type] || type;
-    typeFilter.add(new Option(label, type));
-  });
+function createAccordionHeader(courseName) {
+  const header = document.createElement("button");
+  header.classList.add("accordion-btn");
+  header.innerHTML = `
+    <h2>${courseName}</h2>
+  `;
+  return header;
 }
 
-
-loadSubject().then(subjects => {
-  console.log(subjects);
-  const SECTIONS = ["dropin", "etc", "online"];
-  SECTIONS.forEach(section => {
-    if (subjects[section]) {
-      console.log(subjects[section]);
-      renderTable(subjects[section], section);
-    }
-    else {
-      document.getElementById(`${section}-info`).remove();
-    }
-  });
-  populateFilters(subjects);
-});
-
-/*
-fetch("https://script.google.com/macros/s/AKfycbyGjEIH9y0M7NNRb1mlWXtGNU8zFF-k1OX9z08DQFnX7kN5u-YHvMHOLG6untMkN8qppw/exec?subject=${subjectId}")
-  .then(res => res.json())
-  .then(subjects => {
-
-    const subject = subjects[subjectId];
-
-    
-
-    function populateFilter(dataToFilter, filterId) {
-      const uniqueCourses = new Set();
-      const uniqueInstructors = new Set();
-      const allCourses = dataToFilter.map((dataEntry) => dataEntry.Course);
-      const allInstructors = dataToFilter.map((dataEntry) => dataEntry.Instructor);
-
-      allCourses.forEach((course) => uniqueCourses.add(course));
-      allInstructors.forEach((instructor) => uniqueInstructors.add(instructor));
+function createAccordionSection(courseSections) {
+  const content = document.createElement("div");
+  content.classList.add("accordion-content");
+  Object.entries(courseSections).forEach(([sectionKey, sectionArray]) => {
+    if (sectionArray.length > 0) {
+      const section = document.createElement("div");
+      section.id = sectionKey;
+      const sectionTitle = document.createElement("h3");
+      sectionTitle.textContent = formatSectionName(sectionKey);
+      section.appendChild(sectionTitle);
       
-      const filterList = document.getElementById(filterId);
+      const scheduleContent = document.createElement("div");
+      scheduleContent.classList.add("schedule-content");
 
-      uniqueCourses.forEach((uniqueEntry) => {
-        filterList.add(new Option(uniqueEntry, uniqueEntry.toLowerCase()));
-      });
+      sectionArray.forEach(scheduleObject => {
+        if (sectionKey === "etc") {
+          const instructor = document.createElement("h4");
+          instructor.textContent = "Instructor: " + scheduleObject.Instructor;
+          scheduleContent.appendChild(instructor);
+        }
+        const scheduleBox = document.createElement("div");
+        scheduleBox.classList.add("rounded-box");
+        const scheduleBoxContent = document.createElement("div");
+        scheduleBoxContent.classList.add("rounded-box-content");
 
-      console.log(filterList);
-    }
-
-    // determining which schedule gets displayed
-    function applySection(sectionName, iframeId, containerId) {
-      const section = subject.sections?.[sectionName];
-      const locationList = document.getElementById("in-person-location");
-      const iframe = document.getElementById(iframeId);
-
-      if (section) {
-        const sectionCsv = section.iframe;
-
-        // parsing file using Papa Parse
-        Papa.parse(sectionCsv, {
-          download: true,
-          header: true,
-          skipEmptyLines: true,
-          complete: (results) => {
-            renderTable(results.data);
-            console.log(results);
-            populateFilter(results.data, "course-filter");
+        Object.entries(scheduleObject).forEach(([key, value]) => {
+          if (key != "Instructor" && key != "Saturday") {
+            const daysAndHours = document.createElement("div");
+            daysAndHours.classList.add("days-and-hours");
+            const days = document.createElement("h4");
+            days.textContent = key;
+            const hours = document.createElement("h4");
+            hours.textContent = value;
+            daysAndHours.appendChild(days);
+            daysAndHours.appendChild(hours);
+            scheduleBoxContent.appendChild(daysAndHours);
           }
         });
-
-        iframe.src = section.iframe;
-        iframe.style.height = `${section.height}px`;
-
-        if (sectionName === "dropin") {
-          document.getElementById("dropin-location").textContent = section?.["location"];
-          const dropInLocation = document.createElement("li");
-          dropInLocation.textContent = `Drop in at ${section?.["location"]} during hours below.`;
-          locationList.appendChild(dropInLocation);
-        }
-        if (sectionName === "etc") {
-          const etcAvailability = document.createElement("li");
-          etcAvailability.textContent = "ETC Available for instructors below";
-          locationList.appendChild(etcAvailability);
-        }
-      }
-      else {
-        document.getElementById(containerId).remove();
-      }
+        scheduleBox.appendChild(scheduleBoxContent);
+        scheduleContent.appendChild(scheduleBox);
+      });
+      section.appendChild(scheduleContent);
+      content.appendChild(section);
     }
-
-    if (!subject) {
-      document.body.innerHTML = "<h1>Subject not found</h1>";
-      return;
-    }
-
-    document.getElementById("subject-title").textContent = subject.name;
-
-    // checks if description exists
-    const subjectDescription = subject?.description;
-    if (subjectDescription) {
-      document.getElementById("subject-description").textContent = subjectDescription;
-    }
-    else {
-      document.getElementById("subject-description").remove();
-    }
-
-    // applySection("dropin", "dropin-iframe", "dropin-info");
-    applySection("etc", "etc-iframe", "etc-info");
-    // applySection("online", "online-iframe", "online-info");
-
   });
-  */
+  return content;
+}
+
+
+loadSubject().then(coursesArray => {
+  coursesArray.forEach(course => {
+    createAccordion(course);
+    console.log(course);
+  });
+});
