@@ -25,7 +25,7 @@ function createAccordionHeader(courseName) {
   const header = document.createElement("button");
   header.classList.add("accordion-btn");
   header.innerHTML = `
-    <h2>${courseName}</h2>
+    <h3>${courseName}</h3>
   `;
   return header;
 }
@@ -35,33 +35,37 @@ function createAccordionSection(courseSections) {
   content.classList.add("accordion-content");
   Object.entries(courseSections).forEach(([sectionKey, sectionArray]) => {
     if (sectionArray.length > 0) {
-      const section = document.createElement("div");
-      section.id = sectionKey;
-      const sectionTitle = document.createElement("h3");
-      sectionTitle.textContent = formatSectionName(sectionKey);
-      section.appendChild(sectionTitle);
-      
-      const scheduleContent = document.createElement("div");
-      scheduleContent.classList.add("schedule-content");
+
+      const sectionSchedules = document.createElement("div");
+      sectionSchedules.classList.add("section-schedules");
 
       sectionArray.forEach(scheduleObject => {
+        const scheduleContent = document.createElement("div");
+        scheduleContent.classList.add("schedule-content");
+        const sectionTab = document.createElement("div");
+        sectionTab.classList.add("section-tab");
+        const sectionTitle = document.createElement("h4");
+        sectionTitle.textContent = formatSectionName(sectionKey);
+        sectionTab.appendChild(sectionTitle);
+        scheduleContent.appendChild(sectionTab);
+
         if (sectionKey === "etc") {
-          const instructor = document.createElement("h4");
-          instructor.textContent = "Instructor: " + scheduleObject.Instructor;
-          scheduleContent.appendChild(instructor);
+          sectionTitle.textContent += " - " + scheduleObject.Instructor;
         }
         const scheduleBox = document.createElement("div");
-        scheduleBox.classList.add("rounded-box");
+        scheduleBox.classList.add("rounded-box", "schedule-box");
         const scheduleBoxContent = document.createElement("div");
-        scheduleBoxContent.classList.add("rounded-box-content");
+        scheduleBoxContent.classList.add("schedule-box-content");
 
         Object.entries(scheduleObject).forEach(([key, value]) => {
           if (key != "Instructor" && key != "Saturday") {
             const daysAndHours = document.createElement("div");
             daysAndHours.classList.add("days-and-hours");
             const days = document.createElement("h4");
+            days.classList.add("days");
             days.textContent = key;
             const hours = document.createElement("h4");
+            hours.classList.add("hours");
             hours.textContent = value;
             daysAndHours.appendChild(days);
             daysAndHours.appendChild(hours);
@@ -70,18 +74,23 @@ function createAccordionSection(courseSections) {
         });
         scheduleBox.appendChild(scheduleBoxContent);
         scheduleContent.appendChild(scheduleBox);
+        sectionSchedules.appendChild(scheduleContent);
       });
-      section.appendChild(scheduleContent);
-      content.appendChild(section);
+      content.appendChild(sectionSchedules);
     }
   });
   return content;
 }
 
-
 loadSubject().then(coursesArray => {
   coursesArray.forEach(course => {
     createAccordion(course);
     console.log(course);
+  });
+  const accordionButtons = document.querySelectorAll(".accordion-btn");
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      button.nextElementSibling.classList.toggle('open');
+    });
   });
 });

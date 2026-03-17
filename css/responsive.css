@@ -208,7 +208,8 @@
     background-color: var(--color-secondary);
   }
 
-  #subjects-box {
+  #subjects-menu,
+  #accordion-wrapper {
     width: 80%;
   }
 

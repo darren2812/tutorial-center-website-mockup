@@ -143,6 +143,15 @@
 }
 
 /* --- Subjects Page --- */
+
+#subjects-menu {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
 #subjects-hero,
 #subjects-hero-content {
   display: flex;
@@ -215,6 +224,26 @@
 }
 
 /*--- Individual Subjects Page ---*/
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-content.open {
+  display: block;
+  padding-top: var(--space-xxl);
+  gap: var(--space-md);
+}
+
+.accordion-content > .section-schedules:last-child .schedule-content:last-child {
+  margin-bottom: 0;
+}
+
+#accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
 
 #subject-info-container {
   padding-top: var(--space-xl);
