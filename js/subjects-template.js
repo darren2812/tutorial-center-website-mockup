@@ -26,7 +26,7 @@ function createSearchBar() {
   searchBar.type = "text";
   searchBar.classList.add("search-bar");
   searchBar.id = "schedule-search";
-  searchBar.placeholder = "Search for a course or instructor...";
+  searchBar.placeholder = "Search for a course, tutoring type (e.g., Drop-in, ETC, Online), or instructor...";
   return searchBar;
 }
 
@@ -91,11 +91,29 @@ function createAccordionSection(courseSections) {
   return content;
 }
 
+const params = new URLSearchParams(window.location.search);
+const subjectId = params.get("id");
+const subjects = fetch("../data/subjects.json")
+  .then(res => res.json())
+  .then(subjects => {
+    const subject = subjects[subjectId];
+    if (subject) {
+      const subjectTitle = document.getElementById("subject-title");
+      subjectTitle.textContent = subject.name;
+      const subjectDescriptioon = document.getElementById("subject-description");
+      if (subject.description) {
+        subjectDescriptioon.textContent = subject.description;
+      } else {
+        subjectDescriptioon.style.display = "none";
+      }
+    }
+});
+
 loadSubject().then(coursesArray => {
 
   const searchBar = createSearchBar();
-  const accordionWrapper = document.getElementById("accordion-wrapper");
-  accordionWrapper.appendChild(searchBar);
+  const subjectInfoContainer = document.getElementById("subject-info-container");
+  subjectInfoContainer.appendChild(searchBar);
 
   coursesArray.forEach(course => {
     createAccordion(course);
@@ -103,7 +121,6 @@ loadSubject().then(coursesArray => {
   });
 
   const accordionButtons = document.querySelectorAll(".accordion-btn");
-  const accordionArrows = document.querySelectorAll(".accordion-arrow");
   accordionButtons.forEach(button => {
     button.addEventListener('click', () => {
       button.classList.toggle('open');
@@ -118,4 +135,6 @@ loadSubject().then(coursesArray => {
       });
     });
   });
+
+  document.dispatchEvent(new Event("subjectsRendered"));
 });

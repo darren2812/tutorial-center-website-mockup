@@ -330,6 +330,7 @@
 
 .hours {
   font-weight: var(--body-weight);
+  white-space: pre-line;
 }
 
 /* --- Work CTA Content --- */
@@ -477,6 +478,11 @@
 
 /*--- Individual Subjects Page ---*/
 
+#subject-title,
+#subject-description {
+  margin-bottom: var(--space-md);
+}
+
 .accordion-btn {
   display: flex;
   justify-content: space-between;
@@ -490,16 +496,14 @@
   font-size: var(--h4-size);
   font-weight: var(--btn-weight);
   text-align: left;
+  transition: all 0.1s ease-in-out;
 }
 
-.accordion-btn.open {
-  color: var(--color-primary);
-  font-weight: var(--hover-weight);
-}
-
+.accordion-btn.open,
 .accordion-btn:hover {
   color: var(--color-primary);
   font-weight: var(--hover-weight);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .accordion-content > *:last-child {
@@ -548,11 +552,11 @@
 }
 
 #subject-info,
-#subject-disclaimer h3 {
+#subject-disclaimer {
   max-width: 65ch;
 }
 
-#subject-disclaimer h3 {
+#subject-disclaimer h4 {
   color: var(--color-primary);
   font-weight: 500;
 }

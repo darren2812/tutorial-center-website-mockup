@@ -244,7 +244,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: var(--space-xl) 0;
+  padding-bottom: var(--space-xl);
 }
 
 #subject-info-container {
