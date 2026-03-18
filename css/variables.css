@@ -69,6 +69,8 @@
   --btn-line-height: 1;
   --btn-letter-spacing: 0.02em;
 
+  /* Hover Text */
+  --hover-weight: 500;
 
   /* --- 4. SPACING SYSTEM (8pt Grid) --- */
   --space-xxs: clamp(0.5rem, 0.4583rem + 0.1852vw, 0.625rem);

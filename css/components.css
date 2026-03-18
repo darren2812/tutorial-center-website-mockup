@@ -176,7 +176,7 @@
   transition: 0.2s transform ease;
 }
 
-#nav-dropdown-arrow.open {
+#nav-dropdown-arrow.open{
   transform: rotate(180deg) translateY(-5px);
 }
 
@@ -286,7 +286,7 @@
 }
 
 #hero-bottom-text a:hover {
-  font-weight: 500;
+  font-weight: var(--hover-weight);
 }
 
 #hero-circle {
@@ -371,7 +371,7 @@
   color: var(--color-primary);
 }
 
-#subject-search {
+.search-bar {
   font-weight: var(--btn-weight);
   padding: 0.6em 1.5em;
   text-decoration: none;
@@ -448,7 +448,7 @@
 }
 
 .contact-email:hover {
-  font-weight: 500;
+  font-weight: var(--hover-weight);
   cursor: pointer;
 }
 
@@ -486,14 +486,39 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  border-bottom: 1px solid var(--color-secondary);
-  font-size: var(--h2-size);
-  font-weight: var(--h2-weight);
+  border-bottom: 1px solid var(--color-tertiary);
+  font-size: var(--h4-size);
+  font-weight: var(--btn-weight);
   text-align: left;
+}
+
+.accordion-btn.open {
+  color: var(--color-primary);
+  font-weight: var(--hover-weight);
+}
+
+.accordion-btn:hover {
+  color: var(--color-primary);
+  font-weight: var(--hover-weight);
 }
 
 .accordion-content > *:last-child {
   margin-bottom: 0;
+}
+
+.accordion-arrow {
+  transition: transform 0.2s ease;
+  font-size: 1.5rem;
+}
+
+.accordion-arrow.open {
+  transform: rotate(180deg) translateY(-5px);
+}
+
+#schedule-search {
+  margin: var(--space-md) auto;
+  width: 100%;
+  max-width: 65ch;
 }
 
 .schedule-content {
@@ -678,7 +703,7 @@
 }
 
 .email-data:hover {
-  font-weight: 500;
+  font-weight: var(--hover-weight);
   cursor: pointer;
 }
 

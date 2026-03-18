@@ -146,6 +146,7 @@
 
 #subjects-menu {
   margin: 0 auto;
+  padding-bottom: var(--space-xl);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -243,10 +244,13 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  padding: var(--space-xl) 0;
 }
 
 #subject-info-container {
   padding-top: var(--space-xl);
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   flex-direction: column;

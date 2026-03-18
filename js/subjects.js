@@ -21,11 +21,20 @@ function createAccordion(course) {
   accordionWrapper.appendChild(accordionSection);
 }
 
+function createSearchBar() {
+  const searchBar = document.createElement("input");
+  searchBar.type = "text";
+  searchBar.classList.add("search-bar");
+  searchBar.id = "schedule-search";
+  searchBar.placeholder = "Search for a course or instructor...";
+  return searchBar;
+}
+
 function createAccordionHeader(courseName) {
   const header = document.createElement("button");
   header.classList.add("accordion-btn");
   header.innerHTML = `
-    <h3>${courseName}</h3>
+    ${courseName} <span class="accordion-arrow">&#9662;</span>
   `;
   return header;
 }
@@ -83,14 +92,30 @@ function createAccordionSection(courseSections) {
 }
 
 loadSubject().then(coursesArray => {
+
+  const searchBar = createSearchBar();
+  const accordionWrapper = document.getElementById("accordion-wrapper");
+  accordionWrapper.appendChild(searchBar);
+
   coursesArray.forEach(course => {
     createAccordion(course);
     console.log(course);
   });
+
   const accordionButtons = document.querySelectorAll(".accordion-btn");
+  const accordionArrows = document.querySelectorAll(".accordion-arrow");
   accordionButtons.forEach(button => {
     button.addEventListener('click', () => {
+      button.classList.toggle('open');
       button.nextElementSibling.classList.toggle('open');
+      button.querySelector(".accordion-arrow").classList.toggle('open');
+      accordionButtons.forEach(otherButtons => {
+        if (otherButtons !== button) {
+          otherButtons.nextElementSibling.classList.remove('open');
+          otherButtons.querySelector(".accordion-arrow").classList.remove('open');
+          otherButtons.classList.remove('open');
+        }
+      });
     });
   });
 });
