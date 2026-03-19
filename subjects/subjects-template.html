@@ -3,11 +3,15 @@
 <head>
   <!-- Viewport Settings for Mobile Scaling -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!--Loading Scripts-->
   <script src="/js/partials.js" defer></script>
   <script src="/js/navigation.js" defer></script>
-  <script src="/js/subjects.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.js"
+    integrity="sha512-M0cjXJTonbWEdLI3HJIoJSQBb9980RWmOCk+tvWkhgFrAZqSSIg1+1Db/vDu7Qk9W3L90gBynve17PYvarjfQA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="/js/subjects-template.js" defer></script>
+  <script src="/js/schedule-search.js" defer></script>
 
   <!--Importing Roboto font-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,63 +41,16 @@
       <div id="subject-info-container">
         <div id="subject-info">
           <h1 id="subject-title" class="display-lg"></h1>
-          <h3 id="subject-description"></h3>
+          <h4 id="subject-description"></h4>
         </div>
-        <div class="tutoring-options">
-          <div id="tutoring-options-box" class="rounded-box">
-            <div class="rounded-box-content tutoring-options-inner">
-              <h1>Tutoring Options</h1>
-              <div id="tutoring-options-grid">
-                <div class="tutoring-option-column">
-                  <h2>In-Person</h2>
-                  <ul id="in-person-location"></ul>
-                </div>
-                <div class="tutoring-option-column">
-                  <h2>Online</h2>
-                  <h3>Meet with a tutor on Zoom</h3>
-                  <a href="../wip.html" id="online-tutoring-link" class="btn primary-btn">Join Online Tutoring</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div id="subject-disclaimer">
+          <h4>
+            Schedules may change due to tutor absences or unforeseen circumstances.
+            Please double-check room assignments and in-person/online availability.
+          </h4>
         </div>
       </div>
-    </div>
-    <div id="subject-disclaimer">
-      <div class="container">
-        <h3>
-          Schedules may change due to tutor absences or unforeseen circumstances.
-          Please double-check room assignments and in-person/online availability.
-        </h3>
-      </div>
-    </div>
-    <div class="container" id="subject-sections">
-      <div id="drop-in-info">
-        <h1>Drop in tutoring at <span id="drop-in-location"></span></h1>
-        <div class="schedule-container">
-          <section class="schedule">
-            <iframe id="drop-in-iframe" loading="lazy">
-            </iframe>
-          </section>
-        </div>
-      </div>
-      <div id="etc-info">
-        <h1>ETC Tutoring</h1>
-        <div class="schedule-container">
-          <section class="schedule">
-            <iframe id="etc-iframe" loading="lazy">
-            </iframe>
-          </section>
-        </div>
-      </div>
-      <div id="online-info">
-        <h1>Online Tutoring</h1>
-        <div class="schedule-container">
-          <section class="schedule">
-            <iframe id="online-iframe" loading="lazy">
-            </iframe>
-          </section>
-        </div>
+      <div id="accordion-wrapper">
       </div>
     </div>
   </main>

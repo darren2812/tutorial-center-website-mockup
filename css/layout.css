@@ -143,6 +143,16 @@
 }
 
 /* --- Subjects Page --- */
+
+#subjects-menu {
+  margin: 0 auto;
+  padding-bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
 #subjects-hero,
 #subjects-hero-content {
   display: flex;
@@ -216,8 +226,31 @@
 
 /*--- Individual Subjects Page ---*/
 
+.accordion-content {
+  display: none;
+}
+
+.accordion-content.open {
+  display: block;
+  padding-top: var(--space-xxl);
+  gap: var(--space-md);
+}
+
+.accordion-content > .section-schedules:last-child .schedule-content:last-child {
+  margin-bottom: 0;
+}
+
+#accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: var(--space-xl);
+}
+
 #subject-info-container {
   padding-top: var(--space-xl);
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -229,22 +262,11 @@
   display: block; 
 }
 
-#drop-in-info,
+#dropin-info,
 #etc-info,
 #online-info {
   width: 100%;
   text-align: center;
-}
-
-#subject-disclaimer {
-  text-align: center;
-  padding: var(--space-lg) 0;
-  background: var(--color-background);
-}
-
-#subject-disclaimer .container {
-  display: flex;
-  justify-content: center;
 }
 
 #subject-sections {

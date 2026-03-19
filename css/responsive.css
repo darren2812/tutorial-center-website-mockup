@@ -90,14 +90,11 @@
   }
 
   .upper-icons a:hover,
-  .upper-icons button:hover {
+  .upper-icons button:hover,
+  #nav-dropdown-content a:hover,
+  .accordion-btn:hover {
     color: maroon;
-    font-weight: 500;
-  }
-
-  #nav-dropdown-content a:hover {
-    color: maroon;
-    font-weight: 500;
+    font-weight: var(--hover-weight);
   }
 
   .upper-buttons {
@@ -208,7 +205,8 @@
     background-color: var(--color-secondary);
   }
 
-  #subjects-box {
+  #subjects-menu,
+  #accordion-wrapper {
     width: 80%;
   }
 

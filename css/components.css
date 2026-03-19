@@ -147,7 +147,7 @@
   transform: rotate(180deg) translateY(-5px);
 }
 
-/* -- Subjects Coomponents -- */
+/* -- Subjects Components -- */
 
 .rounded-box {
   width: 100%;
@@ -157,7 +157,7 @@
 }
 
 .rounded-box-content {
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-) var(--space-lg);
 }
 
 .rounded-box h2 {
@@ -176,7 +176,7 @@
   transition: 0.2s transform ease;
 }
 
-#nav-dropdown-arrow.open {
+#nav-dropdown-arrow.open{
   transform: rotate(180deg) translateY(-5px);
 }
 
@@ -286,7 +286,7 @@
 }
 
 #hero-bottom-text a:hover {
-  font-weight: 500;
+  font-weight: var(--hover-weight);
 }
 
 #hero-circle {
@@ -310,21 +310,27 @@
 
 .days-and-hours {
   display: grid;
-  padding: var(--space-sm) 0;
+  padding: var(--space-xs) 0;
   grid-template-columns: 1fr;
 }
 
 .days-and-hours:last-of-type {
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
 }
 
 .closed-info {
+  margin-top: var(--space-md);
   font-weight: 500;
   color: var(--color-primary);
 }
 
 .days {
   font-weight: var(--h2-weight);
+}
+
+.hours {
+  font-weight: var(--body-weight);
+  white-space: pre-line;
 }
 
 /* --- Work CTA Content --- */
@@ -366,7 +372,7 @@
   color: var(--color-primary);
 }
 
-#subject-search {
+.search-bar {
   font-weight: var(--btn-weight);
   padding: 0.6em 1.5em;
   text-decoration: none;
@@ -376,14 +382,6 @@
 }
 
 /* --- Subjects Menu & Boxes --- */
-#subjects-menu {
-  padding: var(--space-lg) 0 var(--space-xl) 0;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-lg);
-}
 
 .subjects-content a {
   text-decoration: none;
@@ -451,7 +449,7 @@
 }
 
 .contact-email:hover {
-  font-weight: 500;
+  font-weight: var(--hover-weight);
   cursor: pointer;
 }
 
@@ -480,20 +478,85 @@
 
 /*--- Individual Subjects Page ---*/
 
-.schedule iframe {
-  width: 100%;
-  border: none;
-  border-radius: 20px;
-  background: var(--color-background);
-  overflow: auto;
+#subject-title,
+#subject-description {
+  margin-bottom: var(--space-md);
 }
 
-#subject-info,
-#subject-disclaimer h3 {
+.accordion-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-tertiary);
+  font-size: var(--h4-size);
+  font-weight: var(--btn-weight);
+  text-align: left;
+  transition: all 0.1s ease-in-out;
+}
+
+.accordion-btn.open,
+.accordion-btn:hover {
+  color: var(--color-primary);
+  font-weight: var(--hover-weight);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.accordion-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-arrow {
+  transition: transform 0.2s ease;
+  font-size: 1.5rem;
+}
+
+.accordion-arrow.open {
+  transform: rotate(180deg) translateY(-5px);
+}
+
+#schedule-search {
+  margin: var(--space-md) auto;
+  width: 100%;
   max-width: 65ch;
 }
 
-#subject-disclaimer h3 {
+.schedule-content {
+  position: relative;
+  margin-bottom: var(--space-xxl);
+}
+
+.schedule-box {
+  position: relative;
+  z-index: 2;
+}
+
+.schedule-box-content {
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.section-tab {
+  position: absolute;
+  --top-spacing: calc(var(--space-xl) * -1);
+  top: var(--top-spacing);
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: inline-block;
+  padding: var(--space-xs) var(--space-lg) calc(var(--top-spacing) * -1) var(--space-lg);
+  border-radius: 20px 20px 0 0;
+  z-index: 1;
+}
+
+#subject-info,
+#subject-disclaimer {
+  max-width: 65ch;
+}
+
+#subject-disclaimer h4 {
   color: var(--color-primary);
   font-weight: 500;
 }
@@ -507,7 +570,7 @@
   margin-bottom: var(--space-md);
 }
 
-#drop-in-info h1,
+#dropin-info h1,
 #online-info h1 {
   margin-bottom: var(--space-md);
 }
@@ -524,6 +587,16 @@
 #in-person-location li {
   font-size: var(--h3-size);
   margin-bottom: var(--space-sm);
+}
+
+.schedule-filter {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
 }
 
 /* --- Apply For Work Page ---*/
@@ -619,7 +692,7 @@
 .email-phone {
   display: flex;
   flex-direction: column;
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
   transition: font-weight 0.1s ease-in-out;
 }
 
@@ -630,11 +703,11 @@
 .email-data {
   color: var(--color-primary);
   text-decoration: underline;
-  font-size: var(--h3-size);
+  font-size: var(--h4-size);
 }
 
 .email-data:hover {
-  font-weight: 500;
+  font-weight: var(--hover-weight);
   cursor: pointer;
 }
 

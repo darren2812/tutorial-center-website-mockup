@@ -7,7 +7,6 @@
 html,
 body {
   margin: 0;
-  overflow-x: hidden;
 }
 
 body {
@@ -23,6 +22,7 @@ body {
 #main-content,
 .slide-up-top-rounded-card {
   background: inherit;
+  overflow-x: hidden;
 }
 
 
