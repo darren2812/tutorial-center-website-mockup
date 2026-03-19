@@ -1,7 +1,7 @@
 async function loadSubject() {
   const params = new URLSearchParams(window.location.search);
   const subjectId = params.get("id");
-  const res = await fetch(`https://script.google.com/macros/s/AKfycbyDaKg2zFOqjKZ5DzB4UjLBj4eMNNEB596uhBckDIzCJDG3dJTqDj6DHvBcZIBb2z6kLg/exec?subject=${subjectId}`);
+  const res = await fetch(`https://script.google.com/macros/s/AKfycbznc7pGFPOu-_g1wzyTRbbWAaNbc3XB9vBLvDkSdWozISk1qqN7q52SP-9J6kgwdmr_Cw/exec?subject=${subjectId}`);
   const subjects = await res.json();
   return subjects;
 }
