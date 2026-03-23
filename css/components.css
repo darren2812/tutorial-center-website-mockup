@@ -276,16 +276,22 @@
   margin-bottom: var(--space-sm);
 }
 
-#hero-bottom-text a {
+#hero-bottom-text a,
+#online-tutoring-info a {
   color: maroon;
   text-decoration: underline;
-  font-size: var(--h4-size);
+  font-size: inherit;
   border: none;
   padding: 0;
   margin-bottom: 0;
 }
 
-#hero-bottom-text a:hover {
+#hero-bottom-text a {
+  font-size: var(--h4-size);
+}
+
+#hero-bottom-text a:hover,
+#online-tutoring-info a:hover {
   font-weight: var(--hover-weight);
 }
 
@@ -554,49 +560,18 @@
 #subject-info,
 #subject-disclaimer {
   max-width: 65ch;
+  margin: 0 auto;
 }
 
 #subject-disclaimer h4 {
+  text-align: center;
+  margin-bottom: var(--space-xl);
   color: var(--color-primary);
   font-weight: 500;
 }
 
 #subject-description {
   margin-top: var(--space-md);
-}
-
-#etc-info h4 {
-  font-weight: 400;
-  margin-bottom: var(--space-md);
-}
-
-#dropin-info h1,
-#online-info h1 {
-  margin-bottom: var(--space-md);
-}
-
-#etc-info h1 {
-  margin-bottom: var(--space-sm);
-}
-
-#etc-info h4 {
-  color: var(--color-primary);
-  font-weight: 500;
-}
-
-#in-person-location li {
-  font-size: var(--h3-size);
-  margin-bottom: var(--space-sm);
-}
-
-.schedule-filter {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.filter-section {
-  display: flex;
-  flex-direction: column;
 }
 
 /* --- Apply For Work Page ---*/

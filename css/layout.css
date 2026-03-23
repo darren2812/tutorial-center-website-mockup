@@ -232,11 +232,23 @@
 
 .accordion-content.open {
   display: block;
-  padding-top: var(--space-xxl);
-  gap: var(--space-md);
+  margin-left: var(--space-lg);
 }
 
-.accordion-content > .section-schedules:last-child .schedule-content:last-child {
+.section-schedules {
+  display: none;
+}
+
+.section-schedules.open {
+  display: block;
+  padding-top: var(--space-sm);
+}
+
+.etc-schedules.open {
+  padding-top: var(--space-xxl);
+}
+
+.accordion-content .section-schedules .schedule-content:last-child {
   margin-bottom: 0;
 }
 
@@ -260,13 +272,6 @@
 .schedule-container {
   width: 100%;
   display: block; 
-}
-
-#dropin-info,
-#etc-info,
-#online-info {
-  width: 100%;
-  text-align: center;
 }
 
 #subject-sections {
