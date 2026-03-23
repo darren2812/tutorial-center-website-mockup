@@ -3,11 +3,12 @@ async function loadSubject() {
   const subjectId = params.get("id");
   const res = await fetch(`https://script.google.com/macros/s/AKfycbznc7pGFPOu-_g1wzyTRbbWAaNbc3XB9vBLvDkSdWozISk1qqN7q52SP-9J6kgwdmr_Cw/exec?subject=${subjectId}`);
   const subjects = await res.json();
+  console.log("Subjects are loaded");
   return subjects;
 }
 
 function formatSectionName(sectionName) {
-  if (sectionName === "dropin") return "Drop-in in LI-134";
+  if (sectionName === "dropin") return "Drop-in at LI-134";
   if (sectionName === "etc") return "ETC";
   if (sectionName === "online") return "Online";
   return sectionName;
@@ -135,7 +136,6 @@ loadSubject().then(coursesArray => {
 
   coursesArray.forEach(course => {
     createAccordion(course);
-    console.log(course);
   });
 
   const accordionButtons = document.querySelectorAll(".accordion-btn");
