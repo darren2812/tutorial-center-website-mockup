@@ -4,9 +4,9 @@ document.addEventListener("subjectsRendered", () => {
 
 function initScheduleSearch() {
   const searchInput = document.getElementById("schedule-search");
-  const accordionButtons = document.querySelectorAll(".accordion-btn");
+  const mainButtons = document.querySelectorAll(".main-accordion-btn");
 
-  const scheduleData = Array.from(accordionButtons).map(button => {
+  const scheduleData = Array.from(mainButtons).map(button => {
     const accordionContent = button.nextElementSibling;
     return {
       button: button, // The actual accordion button
