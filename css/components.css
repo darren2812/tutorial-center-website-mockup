@@ -157,7 +157,7 @@
 }
 
 .rounded-box-content {
-  padding: var(--space-) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
 }
 
 .rounded-box h2 {

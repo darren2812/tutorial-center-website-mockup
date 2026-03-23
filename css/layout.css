@@ -230,6 +230,8 @@
   display: none;
 }
 
+
+
 .accordion-content.open {
   display: block;
   margin-left: var(--space-lg);
