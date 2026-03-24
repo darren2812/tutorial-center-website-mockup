@@ -3,7 +3,6 @@ async function loadSubject() {
   const subjectId = params.get("id");
   const res = await fetch(`https://script.google.com/macros/s/AKfycbznc7pGFPOu-_g1wzyTRbbWAaNbc3XB9vBLvDkSdWozISk1qqN7q52SP-9J6kgwdmr_Cw/exec?subject=${subjectId}`);
   const subjects = await res.json();
-  console.log("Subjects are loaded");
   return subjects;
 }
 
@@ -110,38 +109,80 @@ function closeOtherAccordions(currentButton, buttonClass) {
   });
 }
 
-const params = new URLSearchParams(window.location.search);
-const subjectId = params.get("id");
-const subjects = fetch("../data/subjects.json")
-  .then(res => res.json())
-  .then(subjects => {
-    const subject = subjects[subjectId];
-    if (subject) {
-      const subjectTitle = document.getElementById("subject-title");
-      subjectTitle.textContent = subject.name;
-      const subjectDescriptioon = document.getElementById("subject-description");
-      if (subject.description) {
-        subjectDescriptioon.textContent = subject.description;
-      } else {
-        subjectDescriptioon.style.display = "none";
+async function initializePage() {
+  const params = new URLSearchParams(window.location.search);
+  const subjectId = params.get("id");
+  fetch("../data/subjects.json")
+    .then(res => res.json())
+    .then(subjects => {
+      const subject = subjects[subjectId];
+      if (subject) {
+        const subjectTitle = document.getElementById("subject-title");
+        subjectTitle.textContent = subject.name;
+        const subjectDescription = document.getElementById("subject-description");
+        if (subject.description) {
+          subjectDescription.textContent = subject.description;
+        } else {
+          subjectDescription.style.display = "none";
+        }
+        const searchBar = createSearchBar();
+        const subjectInfoContainer = document.getElementById("subject-info-container");
+        subjectInfoContainer.appendChild(searchBar);
+
       }
-    }
-  });
+    });
+}
 
-loadSubject().then(coursesArray => {
-
-  const searchBar = createSearchBar();
-  const subjectInfoContainer = document.getElementById("subject-info-container");
-  subjectInfoContainer.appendChild(searchBar);
-
+function buildLayout(coursesArray) {
   coursesArray.forEach(course => {
     createAccordion(course);
   });
+}
 
+const loadingScreen = document.getElementById("loading-screen");
+const loadingText = document.getElementById("loading-text");
+
+function showLoading(message = "Loading...") {
+  loadingText.textContent = message;
+  loadingScreen.classList.remove("hidden");
+  mainContent.hidden = true;
+}
+
+function updateLoading(message) {
+  loadingText.textContent = message;
+}
+
+function hideLoading() {
+  loadingScreen.style.display = 'none';
+  mainContent.hidden = false;
+}
+
+async function loadPage() {
+  try {
+    showLoading("Initializing page...");
+    initializePage();
+
+    updateLoading("Fetching subject data...");
+    const coursesArray = await loadSubject();
+
+    updateLoading("Building schedule layout...");
+    buildLayout(coursesArray);
+
+    updateLoading("Finalizing page...");
+    document.dispatchEvent(new Event("subjectsRendered"));
+
+    hideLoading();
+  } catch (error) {
+    loadingText.textContent = "Failed to load schedules.";
+    console.error(error);
+  }
+}
+
+function enableAccordions() {
   const accordionButtons = document.querySelectorAll(".accordion-btn");
-
   accordionButtons.forEach(button => {
     button.addEventListener('click', () => {
+      console.log("dawg");
       button.classList.toggle('open');
       button.nextElementSibling.classList.toggle('open');
       button.querySelector(".accordion-arrow").classList.toggle('open');
@@ -154,6 +195,12 @@ loadSubject().then(coursesArray => {
       }
     });
   });
+}
 
-  document.dispatchEvent(new Event("subjectsRendered"));
-});
+async function run() {
+  await loadPage();
+  enableAccordions();
+  console.log("Subject loaded successfully.");
+}
+
+run();

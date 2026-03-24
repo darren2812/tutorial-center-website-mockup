@@ -7,9 +7,6 @@
   <!--Loading Scripts-->
   <script src="/js/partials.js" defer></script>
   <script src="/js/navigation.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.js"
-    integrity="sha512-M0cjXJTonbWEdLI3HJIoJSQBb9980RWmOCk+tvWkhgFrAZqSSIg1+1Db/vDu7Qk9W3L90gBynve17PYvarjfQA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   <script src="/js/subjects-template.js" defer></script>
   <script src="/js/schedule-search.js" defer></script>
 
@@ -36,13 +33,20 @@
   <aside id="sidebar">
   </aside>
 
-  <main id="main-content">
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-card">
+      <div class="spinner"></div>
+      <p id="loading-text">Loading schedules...</p>
+    </div>
+  </div>
+
+  <main id="main-content" hidden>
     <div class="container">
       <div id="subject-info-container">
         <div id="subject-info">
           <h1 id="subject-title" class="display-lg"></h1>
           <h4 id="subject-description"></h4>
-           <a href="../wip.html" class="btn primary-btn">Click Here for Online Tutoring</a>
+          <a href="../wip.html" class="btn primary-btn">Click Here for Online Tutoring</a>
         </div>
       </div>
       <div id="accordion-wrapper">
