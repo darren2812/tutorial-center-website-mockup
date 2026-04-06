@@ -2,21 +2,20 @@
 
 🔗 **Live Demo:** https://fcc-tutorial-services-prototype.netlify.app<br>
 📂 **Repository:** https://github.com/darren2812/tutorial-center-website-mockup<br>
-⚠️ Main branch is stable, but schedule parsing and filtering functionality is still being developed.<br>
 
 ## Overview
-This is an independent mock redesign of Fresno City College's Tutorial Services website which aims to make navigation clearer and improve information hierarchy and text legibility, and incorporate a responsive design across multiple screen sizes.
+This is an independent mock redesign of Fresno City College's Tutorial Services website which aims to make navigation clearer and improve information hierarchy and text legibility, and incorporate a responsive design across multiple screen sizes. Schedule data is fetched using Google Apps Script and parsed in the frontend, allowing users to search for a specific course, instructor, or tutoring type.
 
 Original Website:
 https://sites.google.com/view/fcc-tutorial-services/fcc-tutorial-services-home
 
-The current version presents challenges in distinguishing between the different departments within Fresno City College's Tutorial Services. Schedule filtering is absent in both versions, though it is currently being developed for the prototype.
+The current version presents challenges in distinguishing between the different departments within Fresno City College's Tutorial Services. 
 
 ## Features
 - Improved information hierarchy through grouping related information together
 - Bolder hero redesign with clear CTA buttons
 - Templated subject page to accomodate schedules across different subjects
-- A search bar which dynamically displays or hides subjects based on the query being entered
+- Search functionality to filter subjects and individual course schedules
 
 ## Tech Stack
 - HTML5
