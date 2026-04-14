@@ -2,91 +2,118 @@ document.addEventListener("subjectsRendered", () => {
   initScheduleSearch();
 });
 
+function closeAccordion(button, content) {
+  button.style.display = "flex";
+  button.classList.remove("open");
+  button.querySelector(".accordion-arrow")?.classList.remove("open");
+  content?.classList.remove("open");
+}
+
+function showSchedules(schedules, display = "block") {
+  schedules.forEach(schedule => {
+    schedule.style.display = display;
+  });
+}
+
 function initScheduleSearch() {
   const searchInput = document.getElementById("schedule-search");
-  const mainButtons = document.querySelectorAll(".main-accordion-btn");
 
-  const scheduleData = Array.from(mainButtons).map(button => {
-    const accordionContent = button.nextElementSibling;
+  if (!searchInput || searchInput.dataset.initialized === "true") {
+    return;
+  }
+
+  searchInput.dataset.initialized = "true";
+
+  // precaching DOM queries
+  const mainButtons = document.querySelectorAll(".main-accordion-btn");
+  const scheduleData = Array.from(mainButtons).map(mainButton => {
+    const content = mainButton.nextElementSibling;
+    const sections = Array.from(content.querySelectorAll(".section-accordion-btn")).map(sectionButton => {
+      const scheduleGroup = sectionButton.nextElementSibling;
+      const schedules = Array.from(scheduleGroup?.querySelectorAll(".schedule-content") ?? []);
+      const instructorNames = schedules.map(schedule => {
+        const instructorHeading = schedule.querySelector(".section-tab h4");
+        return instructorHeading ? instructorHeading.textContent.toLowerCase() : "";
+      });
+
+      return {
+        button: sectionButton,
+        scheduleGroup,
+        schedules,
+        instructorNames,
+      };
+    });
+
     return {
-      mainButton: button, // The actual accordion button
-      content: accordionContent, // The actual HTML accordion content
+      mainButton,
+      content,
+      sections,
     };
   });
 
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
+  function resetSearchState() {
+    scheduleData.forEach(({ mainButton, content, sections }) => {
+      closeAccordion(mainButton, content);
 
-    // Resetting layout with every input
-    document.querySelectorAll(".accordion-btn").forEach(button => {
-      button.style.display = 'flex'
-      button.classList.remove('open');
-      button.querySelector(".accordion-arrow").classList.remove('open');
+      sections.forEach(({ button, scheduleGroup, schedules }) => {
+        closeAccordion(button, scheduleGroup);
+        showSchedules(schedules, "none");
+      });
     });
-    document.querySelectorAll(".accordion-content").forEach(content => content.classList.remove('open'));
-    document.querySelectorAll(".schedule-content").forEach(schedule => schedule.style.display = 'none');
+  }
 
-    scheduleData.forEach(data => {
-      // We check if the accordion button has the query.
-      if (data.mainButton.textContent.toLowerCase().includes(query)) {
-        data.mainButton.style.display = 'flex';
-        data.content.querySelectorAll(".section-accordion-btn").forEach(sectionButton => {
-          sectionButton.style.display = 'flex';
-        });
-        data.content.querySelectorAll(".schedule-content").forEach(schedule => {
-          schedule.style.display = 'block';
-        });
+  function showAllSections(sections) {
+    sections.forEach(({ button, schedules }) => {
+      button.style.display = "flex";
+      showSchedules(schedules);
+    });
+  }
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim().toLowerCase();
+
+    resetSearchState();
+
+    scheduleData.forEach(({ mainButton, sections }) => {
+      if (mainButton.textContent.toLowerCase().includes(query)) {
+        mainButton.style.display = "flex";
+        showAllSections(sections);
+        return;
       }
 
-      // If not, we check if any of section buttons and section tabs have the query.
-      else {
-        let mainButtonVisible = false;
+      let mainButtonVisible = false;
 
-        data.content.querySelectorAll(".section-accordion-btn").forEach(sectionButton => {
+      sections.forEach(({ button, scheduleGroup, schedules, instructorNames }) => {
+        const sectionMatches = button.textContent.toLowerCase().includes(query);
 
-          if (sectionButton.textContent.toLowerCase().includes(query)) {
-            sectionButton.style.display = 'flex';
-            data.content.querySelectorAll(".schedule-content").forEach(schedule => {
-              schedule.style.display = 'block';
-            });
-            mainButtonVisible = true;
-          }
-          else {
-            let sectionButtonVisible = false;
-
-            if (sectionButton.nextElementSibling.classList.contains("etc-schedules")) {
-              const etcSchedule = sectionButton.nextElementSibling;
-              etcSchedule.querySelectorAll(".section-tab").forEach(sectionTab => {
-                const instructor = sectionTab.querySelector("h4").textContent.toLowerCase();
-                const schedule = sectionTab.closest(".schedule-content");
-                if (instructor.includes(query)) {
-                  schedule.style.display = 'block';
-                  sectionButtonVisible = true;
-                }
-                else {
-                  schedule.style.display = 'none';
-                }
-              });
-            }
-
-            if (sectionButtonVisible) {
-              sectionButton.style.display = 'flex';
-              mainButtonVisible = true;
-            }
-            else {
-              sectionButton.style.display = 'none';
-            }
-          }
-        });
-
-        // If any schedule is visible, show the button. Otherwise, hide it.
-        if (mainButtonVisible) {
-          data.mainButton.style.display = 'flex';
+        if (sectionMatches) {
+          button.style.display = "flex";
+          showSchedules(schedules);
+          mainButtonVisible = true;
+          return;
         }
-        else {
-          data.mainButton.style.display = 'none';
+
+        const isEtcSection = scheduleGroup?.classList.contains("etc-schedules");
+        let sectionButtonVisible = false;
+
+        if (isEtcSection) {
+          schedules.forEach((schedule, index) => {
+            const instructorMatches = instructorNames[index].includes(query);
+            schedule.style.display = instructorMatches ? "block" : "none";
+            sectionButtonVisible = sectionButtonVisible || instructorMatches;
+          });
         }
-      }
+
+        if (sectionButtonVisible) {
+          button.style.display = "flex";
+          mainButtonVisible = true;
+        } else {
+          button.style.display = "none";
+          showSchedules(schedules, "none");
+        }
+      });
+
+      mainButton.style.display = mainButtonVisible ? "flex" : "none";
     });
   });
 }
